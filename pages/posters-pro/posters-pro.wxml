@@ -1,0 +1,22 @@
+<!--选择海报-->
+<view class="select-poster" style="padding-top:{{headTop+46}}px;">
+    <view class="select-poster-nav" style="padding-top:{{headTop}}px;">
+        <van-nav-bar
+        title-class="nav-title"
+        title="选择海报"
+        left-text="返回"
+        left-arrow
+        bind:click-left="onClickLeft"
+        />
+    </view>
+    <view class="poster-main">
+        <view class="poster-con" wx:for="{{posterList}}" wx:for-index="index" wx:for-item="poster" data-src="{{poster.MoveImg}}" data-index="{{index}}" wx:key="index" bindtap="chooseFlieSrc">
+            <image class="poster-img" src="{{poster.MoveImg}}" mode="cover"></image>
+            <image class="choose-icon"  wx:if="{{poster.selected===false}}" src="../../images/weixuan.png" mode="cover"></image>
+            <image class="choose-icon" wx:if="{{poster.selected===true}}" src="../../images/yixuan.png" mode="cover"></image>
+        </view>
+    </view>
+    <view class="poster-btn-con">
+        <button class="poster-btn" bindtap="selectPoster">确定</button>
+    </view>
+</view>

@@ -1,0 +1,125 @@
+.invite-supplier{
+    background: #f4f7fa;
+    min-height: 100vh;
+    /* position: absolute;
+    top:0;
+    width: 100%; */
+    box-sizing: border-box;
+}
+.invite-supplier-nav{
+    position: fixed;
+    top:0;
+    z-index: 10000;
+    width: 100%;
+    box-sizing: border-box;
+    background-image: linear-gradient(90deg, 
+		#1a55cb 0%, 
+		#6e77ff 100%), 
+	linear-gradient(
+		#2bd3fd, 
+		#2bd3fd);
+}
+.view-con{
+    background: #fff;
+    margin-top: 18rpx;
+}
+.view-con-esp{
+    background: #fff;
+}
+.invite-supplier-title{
+    display: block;
+    font-size: 30rpx;
+    color:#333;
+    padding-left: 22rpx;
+    height: 98rpx;
+    line-height: 98rpx;
+}
+.invite-supplier-title::before{
+    width: 6rpx;
+    height: 23rpx;
+    background:#3460db; 
+    display: inline-block;
+    content: '';
+    margin-right: 20rpx;
+    border-radius: 3rpx;
+}
+.invite-supplier-note-con{
+    border-top:1px solid #e1e1e1;
+    padding: 30rpx;
+    position: relative;
+    height: 233rpx;
+    box-sizing: border-box;
+    width: 100%;
+}
+.invite-supplier-note-con .note{
+    color:#333;
+    font-size: 28rpx;
+    width: 100%;
+    height: 100%;
+}
+.invite-supplier-note-con .note::placeholder{
+    color:#999;
+    font-size: 28rpx;
+}
+.invite-supplier-note-con .tip{
+    position: absolute;
+    right:19rpx;
+    bottom:22rpx;
+    color:#999;
+    font-size: 28rpx;
+}
+.invite-view{
+    height: 90rpx;
+    line-height: 90rpx;
+    border-top:1px solid #e1e1e1;
+    padding-left: 20rpx;
+    padding-right: 25rpx;
+}
+.invite-view .invite-label{
+    font-size: 28rpx;
+    color: #333333;
+    display: inline-block;
+    width: 120rpx;
+}
+.invite-input{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 28rpx;
+    color: #333;
+    margin-left: 58rpx;
+}
+.invite-input::placeholder{
+    font-size: 28rpx;
+    color: #999;
+}
+.select-temp{
+    display: inline-block;
+    margin-left: 58rpx;
+    width:calc(100% - 180rpx);
+    box-sizing: border-box;
+}
+.select-temp .picker{
+    font-size: 28rpx;
+    color:#333;
+    display: inline-block;
+}
+.invite-right{
+    width: 14rpx;
+    height: 24rpx;
+    float: right;
+    margin-top: 35rpx;
+}
+.invite-supplier-btn-con{
+    margin-top: 230rpx;
+}
+.invite-supplier-btn{
+    width: 656rpx;
+    height: 88rpx;
+    font-size:36rpx;
+    line-height: 88rpx;
+    color:#fff;
+    background-image: linear-gradient(90deg, #1a55cb 0%, #6e77ff 100%), linear-gradient(#2e9dd9, #2e9dd9);
+}
+button::after{
+    border: none;
+}

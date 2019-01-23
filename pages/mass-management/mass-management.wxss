@@ -1,0 +1,262 @@
+.mass-management{
+    background: #f4f7fa;
+    min-height: 100vh;
+    padding-top: 128rpx;
+    box-sizing: border-box;
+    padding-bottom: 20rpx;
+}
+.mass-management-nav{
+    position: fixed;
+    top:0;
+    z-index: 10000;
+    width: 100%;
+    box-sizing: border-box;
+    background-image: linear-gradient(90deg, 
+		#1a55cb 0%, 
+		#6e77ff 100%), 
+	linear-gradient(
+		#2bd3fd, 
+		#2bd3fd);
+}
+
+/* 日历相关 */
+.mass-management-con{
+
+}
+.date-wrap{
+    width: 100%;
+    height: 127rpx;
+    text-align: center; 
+    margin-bottom: 18rpx;
+    padding: 19rpx 30rpx 0;
+    background: #fff;
+    box-sizing: border-box;
+}
+.date-show{  
+    width:25%;
+    display: inline-block;
+    height: 90rpx;
+    padding-top: 10rpx;
+    box-sizing: border-box;
+} 
+.date-show.active{
+    background-image: linear-gradient(90deg, #1a55cb 0%, #6e77ff 100%), linear-gradient(#ffffff, #ffffff);
+    border-radius: 6rpx;
+}
+.date-show.active .month,.date-show.active .price{
+    color: #fff;
+}
+.date-show .month{
+    color: #333;
+    font-size: 28rpx;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 7rpx;
+}
+.date-show .price{
+    color: #333;
+    font-size: 22rpx;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+.header{ 
+    font-size: 0; 
+    padding: 0 24rpx; 
+    background: #fff;
+} 
+.header>view{ 
+    display: inline-block; 
+    width: 14.285%; 
+    color: #222; 
+    font-size: 30rpx; 
+    text-align: center; 
+    border-bottom: 1px solid #D0D0D0; 
+    padding: 30rpx 0; 
+} 
+/* .weekMark{ 
+    position: relative; 
+    z-index: 10;
+}  */
+.weekMark view{ 
+    position: absolute; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+    z-index: 10;
+    border-bottom: 1px solid #22A7F6; 
+} 
+.date-box{ 
+    font-size: 0; 
+    padding: 10rpx 24rpx; 
+    background: #fff;
+    /* height: 400rpx; */
+} 
+.date-box>view{ 
+    position: relative; 
+    display: inline-block; 
+    width: 14.285%; 
+    color: #020202; 
+    font-size: 40rpx; 
+    text-align: center; 
+    vertical-align: middle; 
+    /* margin: 15rpx 0;  */
+    height: 97rpx;
+    padding-top: 15rpx;
+    box-sizing: border-box;
+    border-radius: 6rpx;
+} 
+.date-head{ 
+    height: 97rpx; 
+    /* line-height: 70rpx;  */
+    font-size: 30rpx; 
+    color:#333;
+} 
+  /* .nowDay .date-head{ 
+    width: 70rpx; 
+    border-radius: 6rpx; 
+    text-align: center; 
+    color: #fff; 
+    background-color: #ffba00; 
+    margin: 0 auto; 
+  }  */
+  .activeDay{
+    background-color: #3b63e0; 
+    border-radius: 6rpx; 
+  }
+.activeDay .date-head{
+    width: 100%; 
+    height: 100%;
+    text-align: center; 
+    color: #fff; 
+    margin: 0 auto; 
+}
+.activeDay .date-weight{
+    color:#fff;
+}
+.date-weight{ 
+    font-size: 20rpx; 
+    /* padding: 15rpx 0;  */
+    color:#3a62df;
+} 
+.nowDay .date-weight{ 
+    color: #22A7F6; 
+} 
+.one{ 
+    position: absolute; 
+    bottom: 0; 
+    right: 5rpx; 
+    width: 20rpx; 
+    height: 20rpx; 
+    border-radius: 50%; 
+    background-color: red; 
+} 
+.two{ 
+    position: absolute; 
+    bottom: 30rpx; 
+    right: 5rpx; 
+    width: 20rpx; 
+    height: 20rpx; 
+    border-radius: 50%; 
+    background-color: blue; 
+} 
+.mass-change-list{
+    margin-top: 18rpx;
+}
+.mass-list-title{
+    display: block;
+    font-size: 30rpx;
+    color:#333;
+    padding-left: 22rpx;
+    height: 98rpx;
+    line-height: 98rpx;
+    background: #fff;
+}
+.mass-list-title::before{
+    width: 6rpx;
+    height: 23rpx;
+    background:#3460db; 
+    display: inline-block;
+    content: '';
+    margin-right: 20rpx;
+    border-radius: 3rpx;
+}
+.mass-change-list .list-con{
+    height: 90rpx;
+    line-height: 90rpx;
+    padding-left: 20rpx;
+    border-top: 1px solid #e1e1e1;
+    background: #fff;
+}
+.mass-change-list .list-con-esp{
+    border-top:none;
+}
+.mass-change-list .list-con .list-title{
+    color:#333;
+    font-size: 28rpx;
+    width: 120rpx;
+    display: inline-block;
+}
+.mass-change-list .list-con .list-price{
+    color:#333;
+    font-size: 27rpx;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 40rpx;
+}
+.espi{
+    margin-left: 5rpx !important;
+}
+.title-e{
+    color:#333;
+    font-size: 28rpx;
+}
+.espf{
+    letter-spacing: 55rpx;
+}
+.espy{
+    margin-right: 48rpx;
+}
+.espd{
+    letter-spacing: 14rpx;
+}
+.mass-tip{
+    margin-top: 10rpx;
+    color: #ffba00;
+    font-size: 28rpx;
+    padding-left: 20rpx;
+}
+.mass-note{
+    background: #fff;
+    padding: 30rpx 20rpx 030rpx 25rpx;
+    box-sizing: border-box;
+    height: 280rpx;
+    font-size: 28rpx;
+    color:#333;
+    border-top: 1px solid #e1e1e1;
+}
+.mass-managenment-con{
+    padding: 100rpx 30rpx 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+.mass-managenment-btn{
+    display: inline-block;
+    width: 300rpx;
+    height: 88rpx;
+    font-size:36rpx;
+    line-height: 88rpx;
+    color:#fff;
+    background-image: linear-gradient(90deg, #1a55cb 0%, #6e77ff 100%), linear-gradient(#2e9dd9, #2e9dd9);
+}
+.mass-managenment-btn.esp{
+    width:626rpx !important;
+    margin-left: 0rpx !important;
+}
+.mass-managenment-btn:last-child{
+    margin-left: 30rpx;
+}
+button::after{
+    border: none;
+}

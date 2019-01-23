@@ -1,0 +1,240 @@
+.class-rules{
+    background: #f4f7fa;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+.class-rules-nav{
+    position: fixed;
+    top:0;
+    z-index: 10000;
+    width: 100%;
+    box-sizing: border-box;
+    background-image: linear-gradient(90deg, 
+		#1a55cb 0%, 
+		#6e77ff 100%), 
+	linear-gradient(
+		#2bd3fd, 
+		#2bd3fd);
+}
+.swiper-tab{
+    height: 127rpx;
+    background: #fff;
+    margin-bottom: 18rpx;
+    padding: 32rpx 0 0 22rpx;
+    box-sizing: border-box;
+}
+.swiper-tab .swiper-tab-item{
+    width: 140rpx;
+    height: 64rpx;
+    line-height: 62rpx;
+    color:#333;
+    font-size: 28rpx;
+    border: solid 1px #b7b7b7;
+    border-radius: 6rpx;
+    text-align: center;
+    display: inline-block;
+    margin-right: 50rpx;
+}
+.swiper-tab .swiper-tab-item.active{
+    background-image: linear-gradient(90deg, #1a55cb 0%, #6e77ff 100%), linear-gradient(#ffffff, #ffffff);
+    color:#fff;
+    line-height: 64rpx;
+    border:none;
+}
+.swiper-con{
+    height: calc(100vh - 265rpx);
+    background: #fff;
+    /* padding-top: 39rpx; */
+    box-sizing: border-box;
+}
+.day-con{
+    height: 90rpx;
+    line-height: 90rpx;
+    border-bottom:1px solid #e1e1e1;
+    padding-left: 22rpx;
+    display: inline-block;
+}
+.day-con .day-text{
+    color:#333;
+    font-size: 28rpx;
+    margin-right: 33rpx;
+}
+.day-con .day-input{
+    display: inline-block;
+    color:#333;
+    font-size: 28rpx;
+    vertical-align: middle;
+}
+.day-tip{
+    color:#7d7d7d;
+    font-size: 22rpx;
+    margin-top: 26rpx;
+    padding-left: 23rpx;
+}
+.week-con{
+    padding-left: 22rpx;
+    padding-top: 39rpx;
+}
+.week-con .week-btn{
+    border-radius: 6rpx;
+    border:1px solid #b7b7b7;
+    width: 88rpx;
+    height: 64rpx;
+    line-height: 62rpx;
+    padding: 0;
+    text-align: center;
+    color:#333;
+    font-size: 26rpx;
+    margin-right: 15rpx;
+    display: inline-block;
+    background: #fff;
+}
+.week-con .week-btn.active{
+    color:#fff;
+    background-image: linear-gradient(90deg, #1a55cb 0%, #6e77ff 100%), linear-gradient(#ffffff, #ffffff);
+    border:none;
+    line-height: 64rpx;
+}
+.class-rules-btn-con{
+    /* margin-top: 230rpx; */
+}
+.class-rules-btn{
+    width: 656rpx;
+    height: 88rpx;
+    font-size:36rpx;
+    line-height: 88rpx;
+    color:#fff;
+    background-image: linear-gradient(90deg, #1a55cb 0%, #6e77ff 100%), linear-gradient(#2e9dd9, #2e9dd9);
+}
+button::after{
+    border: none;
+}
+
+/* 日历相关 */
+.date-wrap{
+    width: 100%;
+    height: 96rpx;
+    text-align: center; 
+    line-height: 96rpx;
+    /* margin: 59rpx auto 10rpx;  */
+    background-image: linear-gradient(90deg, #1a55cb 0%, #6e77ff 100%), linear-gradient(#f4f7fa, #f4f7fa);
+}
+.date-show{ 
+    font-family: PingFang-SC-Regular; 
+    font-size: 29rpx; 
+    color: #fff;
+    position: relative; 
+    width: 450rpx;
+    margin: auto;
+  } 
+  .lt-arrow,.rt-arrow{ 
+    position: absolute; 
+    top: 1rpx; 
+    width: 60rpx; 
+    height: 60rpx; 
+  } 
+  .lt-arrow image,.rt-arrow image{ 
+    width: 19rpx; 
+    height: 36rpx; 
+  } 
+  .lt-arrow{ 
+    left: -110rpx; 
+    transform: rotate(180deg); 
+    top:30rpx;
+  } 
+  .rt-arrow{ 
+    right: -100rpx; 
+    top:10rpx;
+  } 
+  .header{ 
+    font-size: 0; 
+    padding: 0 24rpx; 
+  } 
+  .header>view{ 
+    display: inline-block; 
+    width: 14.285%; 
+    color: #222; 
+    font-size: 30rpx; 
+    text-align: center; 
+    border-bottom: 1px solid #D0D0D0; 
+    padding: 30rpx 0; 
+  } 
+  .weekMark{ 
+    position: relative; 
+  } 
+  .weekMark view{ 
+    position: absolute; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+    border-bottom: 1px solid #22A7F6; 
+  } 
+  .date-box{ 
+    font-size: 0; 
+    padding: 10rpx 24rpx; 
+    /* height: 400rpx; */
+  } 
+  .date-box>view{ 
+    position: relative; 
+    display: inline-block; 
+    width: 14.285%; 
+    color: #020202; 
+    font-size: 40rpx; 
+    text-align: center; 
+    vertical-align: middle; 
+    margin: 15rpx 0; 
+  } 
+  .date-head{ 
+    height: 70rpx; 
+    line-height: 70rpx; 
+    font-size: 30rpx; 
+    color:#333;
+  } 
+  /* .nowDay .date-head{ 
+    width: 70rpx; 
+    border-radius: 6rpx; 
+    text-align: center; 
+    color: #fff; 
+    background-color: #ffba00; 
+    margin: 0 auto; 
+  }  */
+  .activeDay .date-head{
+    width: 70rpx; 
+    border-radius: 6rpx; 
+    text-align: center; 
+    color: #fff; 
+    background-color: #3b63e0; 
+    margin: 0 auto; 
+  }
+  .date-weight{ 
+    font-size: 22rpx; 
+    padding: 15rpx 0; 
+    color:#333;
+  } 
+  .nowDay .date-weight{ 
+    color: #22A7F6; 
+  } 
+  .one{ 
+    position: absolute; 
+    bottom: 0; 
+    right: 5rpx; 
+    width: 20rpx; 
+    height: 20rpx; 
+    border-radius: 50%; 
+    background-color: red; 
+  } 
+  .two{ 
+    position: absolute; 
+    bottom: 30rpx; 
+    right: 5rpx; 
+    width: 20rpx; 
+    height: 20rpx; 
+    border-radius: 50%; 
+    background-color: blue; 
+  } 
+  .wrap{
+      height: 400rpx;
+  }
+  swiper {
+    height: 860rpx;
+  }

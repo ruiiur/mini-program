@@ -1,0 +1,419 @@
+.product-order{
+    background: #f4f7fa;
+    min-height: 100vh;
+    padding-bottom: 190rpx;
+}
+.product-order-nav{
+    position: fixed;
+    top:0;
+    z-index: 10000;
+    width: 100%;
+    box-sizing: border-box;
+    background-image: linear-gradient(90deg, 
+		#1a55cb 0%, 
+		#6e77ff 100%), 
+	linear-gradient(
+		#2bd3fd, 
+		#2bd3fd);
+}
+.view-con-esp{
+    margin-top: 0 !important;
+}
+.view-con{
+    background: #fff;
+    margin-top: 18rpx;
+    position: relative;
+}
+.product-name{
+    font-size: 30rpx;
+    color:#333;
+    padding: 30rpx 36rpx 30rpx 20rpx;
+    display: block;
+}
+.paste{
+    position: absolute;
+    top:30rpx;
+    right:22rpx;
+    width: 130rpx;
+    height: 42rpx;
+    line-height: 42rpx;
+    background-image: linear-gradient(90deg, #1a55cb 0%, #6e77ff 100%), linear-gradient(#ffba00, #ffba00);
+    font-size: 20rpx;
+    color:#fff;
+    padding: 0;
+    text-align: center;
+}
+.change-remark-view{
+    height: 90rpx;
+    line-height: 90rpx;
+    border-top:1px solid #e1e1e1;
+    padding-left: 20rpx;
+    padding-right: 25rpx;
+}
+.change-remark-view-esp{
+    min-height: 90rpx;
+    border-top:1px solid #e1e1e1;
+    padding-left: 20rpx;
+    padding-right: 25rpx;
+    box-sizing: border-box;
+    height: auto;
+}
+.change-remark-view-esp .remark-note{
+    display: inline-block;
+    vertical-align: top;
+    color:#333;
+    font-size: 28rpx;
+    min-height: 90rpx;
+    height: auto;
+    padding-top: 25rpx;
+    box-sizing: border-box;
+    margin-left: 38rpx;
+    width: 530rpx;
+}
+.change-remark-view-esp .remark-note::placeholder{
+    color:#999;
+    font-size: 28rpx;
+}
+.change-remark-view .change-remark-label, .change-remark-view-esp .change-remark-label{
+    font-size: 28rpx;
+    color: #333333;
+    display: inline-block;
+    width: 140rpx;
+}
+.change-remark-view-esp .change-remark-label{
+    margin-top: 25rpx;
+}
+.change-remark-input{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 28rpx;
+    color: #333;
+    margin-left: 38rpx;
+    width: 300rpx;
+}
+.change-remark-input::placeholder{
+    font-size: 28rpx;
+    color: #999;
+}
+.remark-add,.remark-reduce{
+    width: 80rpx;
+    height: 60rpx;
+    display: inline-block;
+    vertical-align: middle;
+}
+.remark-add{
+    margin-left: 40rpx;
+}
+.remark-reduce{
+    margin-right: 10rpx;
+}
+.product-order-title{
+    display: block;
+    font-size: 30rpx;
+    color:#333;
+    padding-left: 22rpx;
+    height: 98rpx;
+    line-height: 98rpx;
+}
+.product-order-title::before{
+    width: 6rpx;
+    height: 23rpx;
+    background:#3460db; 
+    display: inline-block;
+    content: '';
+    margin-right: 20rpx;
+    border-radius: 3rpx;
+}
+/* .product-order-note-con{
+    border-top:1px solid #e1e1e1;
+    padding: 30rpx;
+    position: relative;
+    height: 233rpx;
+    box-sizing: border-box;
+} */
+.product-order-note-con .note{
+    color:#333;
+    font-size: 28rpx;
+    width: 100% !important;
+    height: 233rpx !important;
+    border-top:1px solid #e1e1e1;
+    padding: 20rpx 30rpx;
+    position: relative;
+    box-sizing: border-box;
+}
+.product-order-note-con .note::placeholder{
+    color:#999;
+    font-size: 28rpx;
+}
+.product-order-note-con .tip{
+    position: absolute;
+    right:19rpx;
+    bottom:22rpx;
+    color:#999;
+    font-size: 28rpx;
+}
+.product-order-view{
+    height: 90rpx;
+    line-height: 90rpx;
+    border-top:1px solid #e1e1e1;
+    padding-left: 20rpx;
+    padding-right: 25rpx;
+}
+.product-order-view .product-order-label{
+    font-size: 28rpx;
+    color: #333333;
+}
+.product-order-input{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 28rpx;
+    color: #333;
+    margin-left: 58rpx;
+}
+.tour-date{
+    font-size: 28rpx;
+    color: #999;
+    margin-left: 58rpx;
+}
+.tour-date-esp{
+    color: #333;
+}
+.product-order-right{
+    width: 14rpx;
+    height: 24rpx;
+    float: right;
+    margin-top: 35rpx;
+}
+.tour-info{
+    padding:25rpx 20rpx;
+    border-top:1px solid #e1e1e1;
+}
+.tour-info .tour-icon{
+    width: 36rpx;
+    height: 27rpx;
+    margin-right: 23rpx;
+}
+.tour-info .tour-index{
+    font-size: 28rpx;
+    color: #111;
+}
+.cancel-con{
+    float: right;
+}
+.cancel-con .cancel-img{
+    width: 20rpx;
+    height: 25rpx;
+}
+.cancel-con .cancel-tip{
+    font-size: 25rpx;
+    color: #999;
+    margin-left: 10rpx;
+}
+.name-label{
+    font-size: 28rpx;
+    color: #333;
+}
+.add-tour{
+    height: 80rpx;
+    line-height: 80rpx;
+    padding-left: 28rpx;
+    border-top:1px solid #e1e1e1;
+}
+.add-tour .add-icon{
+    width: 24rpx;
+    height: 24rpx;
+    padding-right: 20rpx;
+    display: inline-block;
+    vertical-align: middle;
+}
+.add-tour .add-text{
+    font-size: 22rpx;
+    color: #333;
+    display: inline-block;
+    vertical-align: middle;
+}
+.select-card{
+    display: inline-block;
+    width: 113rpx;
+    position: relative;
+}
+.select-card .picker{
+    font-size: 28rpx;
+    color: #333;
+    letter-spacing: 2rpx;
+}
+.select-card .picker-icon{
+    width: 18rpx;
+    height: 12rpx;
+    position: absolute;
+    right:0;
+    top:35rpx;
+}
+.traffic-note{
+    width: 100% !important;
+    height: 233rpx;
+    padding: 30rpx;
+    font-size: 28rpx;
+    color: #333;
+    box-sizing: border-box;
+}
+textarea::placeholder{
+    font-size: 28rpx !important;
+    color: #999 !important;
+}
+.traffic-images-list{
+    display: inline-block;
+    margin-right: 30rpx;
+    padding-left: 23rpx;
+    padding-top: 28rpx;
+    /* padding-bottom: 20rpx; */
+}
+.traffic-images-list .traffic-image{
+    width: 180rpx;
+    height: 180rpx;
+    margin-right:15rpx;
+}
+.update-traffic{
+    display: inline-block;
+    vertical-align: top;
+    width: 180rpx;
+    height: 180rpx;
+    padding-top: 28rpx;
+    margin-left: 20rpx;
+    padding-bottom: 20rpx;
+}
+.order-bottom{
+    height: 98rpx;
+    width: 100%;
+    position: fixed;
+    bottom:0;
+    background: #fff;
+    z-index: 10000;
+    box-shadow: 1rpx -4rpx 3rpx 0px 
+        rgba(215, 216, 220, 0.13);
+    line-height: 98rpx;
+    padding-left: 28rpx;
+    z-index: 10000;
+}
+.order-bottom .sum-label{
+    font-size: 32rpx;
+    color:#333;
+    margin-right: 26rpx;
+}
+.order-bottom .sum-price{
+    font-size: 32rpx;
+    color:#ffa100;
+}
+.order-bottom .sum-btn{
+    width: 245rpx;
+    height: 100rpx;
+    background-image: linear-gradient(90deg, #1a55cb 0%, #6e77ff 100%), linear-gradient(#4e9dd9, #4e9dd9);
+    padding: 0;
+    text-align: center;
+    font-size: 32rpx;
+    color:#fff;
+    float: right;
+    border-radius: 0;
+    line-height: 100rpx;
+}
+.amount-detail{
+    font-size: 24rpx;
+    color:#ffa100;
+    position: absolute;
+    top:5rpx;
+    right:298rpx;
+}
+.amount-con{
+    padding-bottom: 98rpx;
+}
+.amount-con .amount-title{
+    height: 99rpx;
+    line-height: 99rpx;
+    font-size: 28rpx;
+    color:#333;
+    text-align: center;
+    border-bottom:1px solid #e1e1e1;
+}
+.amount-view-con{
+    padding: 10rpx 30rpx 30rpx;
+}
+.amount-view-con .amount-view{
+    padding: 10rpx 0;
+}
+.amount-view-con .amount-view .amount-label{
+    font-size: 28rpx;
+    color:#333;
+}
+.amount-view-con .amount-view .amount-price{
+    font-size: 28rpx;
+    color:#333;
+    float: right;
+    margin-top: 7rpx;
+}
+.amount-label-esp,.amount-price-esp{
+    color:#ffa100 !important;
+}
+.product-order-label-esp{
+    margin-right:55rpx;
+}
+.product-order-label-price{
+    margin: 0 13rpx;
+}
+.price-info{
+    font-size: 27rpx;
+    color:#333;
+    margin-left: 57rpx;
+}
+.copy-view{
+    border-top:1px solid #e1e1e1;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+}
+.copy-title{
+    padding: 19rpx 3rpx 0;
+}
+.copy-title .tip-title{
+    font-size: 28rpx;
+    color:#111;
+}
+.copy-title .copy-btn{
+    width: 100rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    font-size: 24rpx;
+    color:#fff;
+    border-radius: 4rpx;
+    float: right;
+    background-image: linear-gradient(90deg, #1a55cb 0%, #6e77ff 100%), linear-gradient(#ffba00, #ffba00);
+    margin-left: 30rpx;
+}
+.copy-title .copy-btn-esp{
+    background: #c8c8c8;
+}
+.copy-con{
+    width: 100%;
+    position: relative;
+    margin: 18rpx 0;
+}
+.noteCopy{
+    width: 100%;
+    /* position: absolute; */
+    padding: 27rpx 24rpx;
+    border:1px solid #e7e7e7;
+    box-sizing: border-box;
+    font-size: 28rpx;
+    color:#333;
+}
+.copy-tip{
+    position: absolute;
+    top:20rpx;
+    left:24rpx;
+}
+.copy-tip .tip-place{
+    font-size: 28rpx;
+    color:#999;
+    display: block;
+}
+button::after{
+    border: none;
+}

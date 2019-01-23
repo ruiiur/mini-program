@@ -1,0 +1,55 @@
+<!--订单详情-->
+<view class="change-order" style="padding-top:{{headTop+45}}px;">
+     <view class="change-order-nav" style="padding-top:{{headTop}}px;">
+        <van-nav-bar
+        title-class="nav-title"
+        title="变更单"
+        left-text="返回"
+        left-arrow
+        bind:click-left="onClickLeft"
+         />
+    </view>
+    <view class="view-con">
+        <view class="change-list">
+            <view class="change-con"   wx:for="{{changeList}}" data-orderid="{{change.ID}}" wx:for-item="change" wx:for-index="index" wx:key="index" bindtap="toOrderDetails">
+                <view class="change-date">
+                    <text class="change-state" wx:if="{{change.Status==1}}">已确认</text>
+                    <text class="change-state" wx:if="{{change.Status==0}}">待审核</text>
+                    <text class="change-state" wx:if="{{change.Status==-1}}">取消</text>
+                    {{change.RevisedDate}}
+                    <view class="change-btn-con" wx:if="{{change.Status==0}}">
+                        <button class="change-btn-left" data-status="-1" data-orderid="{{change.ID}}" bindtap="auditBtn" >拒绝</button>
+                        <button class="change-btn-right" data-status="1" data-orderid="{{change.ID}}" bindtap="auditBtn">确认</button>
+                    </view>
+                </view>
+                <view class="change-main">
+                    <text class="change-title">内容修改</text>
+                    <text class="change-text">{{change.ChangeComment}}</text>
+                </view>
+                <view class="change-price">
+                    <text class="change-title">成本金额调整</text>
+                    <view class="change-view">
+                        <text class="change-label">成本金额</text>
+                        <text class="change-tip">{{change.BeforeCostAmount}}元</text>
+                    </view>
+                    <view class="change-view">
+                        <text class="change-label">调整金额</text>
+                        <text class="change-tip">{{change.CostAdjustAmt}}元</text>
+                    </view>
+                    <view class="change-view">
+                        <text class="change-label">调整后金额</text>
+                        <text class="change-tip">{{change.AfterCostAmount}}元</text>
+                    </view>
+                    <view class="change-view" wx:if="{{change.CostComment!=null&&change.CostComment!=''}}">
+                        <text class="change-label">修改备注</text>
+                        <text class="change-tip change-tip-esp">{{change.CostComment}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+         <view class="without-con" wx:if="{{changeList.length==0 && isList==false}}">
+            <image class="without-img" src="../../images/none.png" mode="cover"></image>
+            <text class="without-tip">暂无待审核变更单哦~</text>
+        </view>
+    </view>
+</view>

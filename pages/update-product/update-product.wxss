@@ -1,0 +1,195 @@
+.update-product{
+    background: #f4f7fa;
+    min-height: 100vh;
+    padding-bottom: 70rpx;
+    padding-top: 128rpx;
+    box-sizing: border-box;
+}
+.update-product-nav{
+    position: fixed;
+    top:0;
+    z-index: 10000;
+    width: 100%;
+    box-sizing: border-box;
+    background-image: linear-gradient(90deg, 
+		#1a55cb 0%, 
+		#6e77ff 100%), 
+	linear-gradient(
+		#2bd3fd, 
+		#2bd3fd);
+}
+.view-con{
+    background: #fff;
+    margin-top: 18rpx;
+}
+.view-con-esp{
+    margin-top: 0rpx !important;
+}
+.update-product-title{
+    display: block;
+    font-size: 30rpx;
+    color:#333;
+    padding-left: 22rpx;
+    height: 98rpx;
+    line-height: 98rpx;
+    border-bottom:1px solid #e1e1e1;
+}
+.update-product-title::before{
+    width: 6rpx;
+    height: 23rpx;
+    background:#3460db; 
+    display: inline-block;
+    content: '';
+    margin-right: 20rpx;
+    border-radius: 3rpx;
+}
+.update-product-title-mar{
+    margin-bottom: 25rpx;
+}
+.update-product-name{
+    padding: 20rpx 30rpx;
+    position: relative;
+    height: 233rpx;
+    box-sizing: border-box;
+}
+.update-product-name .product-name{
+    color:#333;
+    font-size: 28rpx;
+    width: 100%;
+    height: 100%;
+}
+.update-product-name .product-name::placeholder{
+    color:#999;
+    font-size: 28rpx;
+}
+.update-product-name .tip{
+    position: absolute;
+    right:19rpx;
+    bottom:22rpx;
+    color:#999;
+    font-size: 28rpx;
+}
+.destination{
+    height: 90rpx;
+    /* border-top:1px solid #e1e1e1; */
+    padding-top: 18rpx;
+    box-sizing: border-box;
+    padding-left: 30rpx;
+}
+.destination .pro-type{
+    padding: 0;
+    width: 140rpx;
+    height: 54rpx;
+    font-size:26rpx;
+    line-height: 52rpx;
+    text-align: center;
+    color:#333;
+    background: #fff;
+    margin-right: 30rpx;
+    border:1px solid #e1e1e1;
+    display: inline-block;
+}
+.destination .pro-type.active{
+    background-image: linear-gradient(90deg, #1a55cb 0%, #6e77ff 100%), linear-gradient(#2e9dd9, #2e9dd9);
+    border:none;
+    color:#fff;
+    line-height: 54rpx;
+}
+.posters-list{
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 33rpx;
+    padding-bottom: 15rpx;
+}
+.posters{
+    width: 179rpx;
+    display: inline-block;
+    margin-right: 30rpx;
+}
+.posters .posters-img{
+    width: 180rpx;
+    height: 280rpx;
+    /* border-radius: 10rpx; */
+}
+.posters .covers-img{
+    width: 179rpx;
+    height: 190rpx;
+    border-radius: 10rpx;
+}
+.posters .posters-tip{
+    width: 179rpx;
+    color:#7d7d7d;
+    font-size: 26rpx;
+    text-align: center;
+    display: inline-block;
+}
+.update-btn{
+    width: 179rpx;
+    height: 190rpx;
+    margin-left: 20rpx;
+    display: inline-block;
+    padding-bottom: 20rpx;
+}
+.update-file{
+    padding-left: 34rpx;
+    /* border-top:1px solid #e1e1e1; */
+    padding-top:23rpx;
+    padding-bottom: 40rpx;
+    height: 118rpx;
+    box-sizing: border-box;
+}
+.update-file .file-name{
+    color:#333;
+    font-size: 28rpx;
+}
+.update-file .file-icon{
+    width: 28rpx;
+    height: 28rpx;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 33rpx;
+    margin-right: 30rpx;
+}
+.update-file .file-btn{
+    padding: 0;
+    width: 140rpx;
+    height: 54rpx;
+    font-size:26rpx;
+    line-height: 54rpx;
+    text-align: center;
+    color:#fff;
+    background-image: linear-gradient(90deg, #1a55cb 0%, #6e77ff 100%), linear-gradient(#2e9dd9, #2e9dd9);
+    /* float: right; */
+    /* margin-right: 130rpx; */
+    margin-top: 8rpx;
+    display: inline-block;
+    vertical-align: middle;
+   
+}
+.choose-con{
+   padding-bottom: 60px;
+}
+.choose-bar{
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 16px;
+    border-bottom:1px solid #e1e1e1;
+}
+.choose-bar:last-child{
+    border-bottom: none;
+}
+.product-btn-con{
+    margin-top: 120rpx;
+}
+.product-btn{
+    width: 656rpx;
+    height: 88rpx;
+    font-size:36rpx;
+    line-height: 88rpx;
+    color:#fff;
+    background-image: linear-gradient(90deg, #1a55cb 0%, #6e77ff 100%), linear-gradient(#2e9dd9, #2e9dd9);
+}
+button::after{
+    border: none;
+}

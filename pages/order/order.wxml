@@ -1,0 +1,68 @@
+<!--订单列表-->
+<view class="order" style="padding-top:{{headTop+45}}px;">
+     <view class="order-nav" style="padding-top:{{headTop}}px;">
+        <van-nav-bar
+        title-class="nav-title"
+        title="订单列表"
+         />
+    </view>
+    <view class="order-tab">
+        <view class="tab-btn">
+            <text class="tab-title">内部订单</text>
+            <image class="tab-icon" src="../../images/bottom.png" mode="cover"></image>
+            <text class="tab-line">|</text>
+        </view>
+        <view class="tab-btn">
+            <!-- <text class="tab-title">出团日期</text> -->
+            <picker mode="date" class="date-picker" value="{{date}}" start="2015-09-01" end="2027-09-01"  bindchange="bindDateChange">
+                <view class="picker">{{date}}</view>
+            </picker>
+            <image class="tab-icon" src="../../images/bottom.png" mode="cover"></image>
+            <text class="tab-line">|</text>
+        </view>
+        <view class="tab-btn">
+            <picker class="date-picker" bindchange="bindPickerChange" data-index="{{index}}" value="{{signStatus+1}}" range="{{orderType}}">
+                <view class="picker">{{orderType[signStatus+1]}}</view>
+            </picker>
+            <image class="tab-icon" src="../../images/bottom.png" mode="cover"></image>
+        </view>
+        <view class="switch"  bindtap="switch">
+            <image class="switch-icon" src="../../images/wenzi.png" mode="cover"></image>
+        </view>
+    </view>
+    <view class="order-product">
+        <view class="order-list">
+            <view class="pro-con" wx:for="{{orderList}}" data-orderid="{{order.OrderID}}" wx:for-item="order" wx:if="{{order.DataStatus!=-1}}" wx:for-index="index" wx:key="index" bindtap="toOrderDetails">
+                <image class="pro-img" src="{{order.PicImage}}" wx:if="{{isShow}}" mode="cover"></image>
+                <view  class="pro-info  {{isShow===false?'pro-info-text':''}}">
+                    <text class="name">{{order.ProName}}</text>
+                    <text class="date">出团日期:{{order.TourDate}}</text>
+                    <!-- 订单签收状态  0：未发单  1：已发未收 2：已签收 3：已拒收 -->
+                    <text class="order-state" wx:if="{{order.SignStatus==1}}">已发未收</text>
+                    <text class="order-state" wx:if="{{order.SignStatus==2}}">已签收</text>
+                    <text class="order-state" wx:if="{{order.SignStatus==3}}">已拒收</text>
+                    <text class="order-state" wx:if="{{order.SignStatus==0}}">未发单</text>
+                    <view>
+                        <button catchtap="toSendOrder" wx:if="{{order.SignStatus==0}}" data-orderid="{{order.OrderID}}">发单</button><button catchtap="toModifyProduct" data-orderid="{{order.OrderID}}" wx:if="{{order.SignStatus==0 || order.SignStatus==1}}">修改</button>
+                        <button catchtap="toAlteration" data-orderid="{{order.OrderID}}" wx:if="{{order.SignStatus==2}}">变更</button>  <button catchtap="orderCancel" data-orderid="{{order.OrderID}}" wx:if="{{order.SignStatus==2 || order.SignStatus==1}}">取消</button>     
+                    </view>      
+                </view>
+            </view>
+            <view wx:if="{{noData!=''}}" class="no-data">{{noData}}</view>
+            <view class="without-con" wx:if="{{orderList.length==0 && isList==false}}">
+                <image class="without-img" src="../../images/none.png" mode="cover"></image>
+                <text class="without-tip">暂无符合条件的订单信息</text>
+            </view>
+            <!-- <view class="pro-con">
+                <image class="pro-img" src="../../images/like2.png" mode="cover"></image>
+                <view  class="pro-info">
+                    <text class="name">我是产品名称我是产品名称我是产品名称我是产品...</text>
+                    <text class="date">出团日期:2018-09-27</text>
+                    <view>
+                       <button>修改</button><button>取消</button>    
+                    </view>        
+                </view>
+            </view> -->
+        </view>
+    </view>
+</view>

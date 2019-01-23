@@ -1,0 +1,88 @@
+<!--产品详情-->
+<view class="product-details" style="padding-top:{{headTop+46}}px;">
+     <view class="product-details-nav" style="padding-top:{{headTop}}px;">
+        <van-nav-bar
+        title-class="nav-title"
+        title="产品详情"
+        left-text="返回"
+        left-arrow
+        bind:click-left="onClickLeft"
+         />
+    </view>
+    <view class="details-info">
+        <!-- <text class="product-name">这是产品名称产品名称产品名称产品名称</text> -->
+        <text class="product-name">{{proInfo.productName}}</text>
+        <view class="product-poster">
+            <!-- <image class="product-details-img" src="{{proInfo.PicImage}}" mode="cover"></image> -->
+            <image class="product-details-img" src="{{proInfo.PicPosterImage}}" mode="cover"></image>
+            <!-- <image class="product-details-img" src="../../images/haibao1.png" mode="cover"></image> -->
+        </view>
+        <view class="attachment">
+            <text class="attachment-label">产品附件</text>
+            <text class="attachment-title">{{proInfo.fileName}}</text>
+            <!-- <text class="attachment-title">这是产品附件</text> -->
+        </view>
+    </view>
+    <!-- <view>
+        <text class="open-title">产品开班</text>
+        <view class="view-con">
+            <text class="open-class-label">开团日期</text>
+            <picker mode="date" class="date-picker" value="{{date}}" start="2015-09-01" end="2017-09-01"  bindchange="bindDateChange">
+                <view class="picker">{{date}}</view>
+            </picker>
+            <text class="interval">至</text>
+            <picker mode="date" class="date-picker" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+                <view class="picker">{{date}}</view>
+            </picker>
+            <view class="dates">1月</view>
+            <view class="dates">2月</view>
+        </view>
+        <view class="view-con">
+            <text class="open-class-label">产品库存</text>
+            <input class="open-input" type="text" placeholder="请输入产品库存"/>
+        </view>
+        <view class="view-con">
+            <text class="open-class-label">开班规则</text>
+            <text class="accord">按天数</text>
+            <text class="open-rule">每隔2天发团</text>
+            <image class="select-icon" src="../../images/youjiantou.png" mode="cover"></image>
+        </view>
+        <view class="view-con">
+            <text class="open-class-label">直客价格</text>
+            <input class="open-input" type="text" placeholder="请输入直客价格"/>
+        </view>
+        <view class="view-con">
+            <text class="open-class-label">分销价格</text>
+            <input class="open-input" type="text" placeholder="请输入分销价格"/>
+        </view>
+        <view class="view-con">
+            <text class="open-class-label">返</text>
+            <text class="open-class-label-esp">佣</text>
+            <input class="open-input" type="text" placeholder="请输入返佣价"/>
+        </view>
+        <view class="view-con">
+            <text class="labelo">单</text>
+            <text class="labelo labelo-esp">房</text>
+            <text class="labelo">差</text>
+            <input class="open-input open-input-esp" type="text" placeholder="请输入单房差"/>
+        </view>
+    </view> -->
+    <view class="view-con"  wx:if="{{proInfo.TourCount>0}}">
+        <text class="product-details-title">团次详情</text>
+        <view class="product-tour" data-proid="{{proId}}" bindtap="checkTour">
+            <text class="product-details-label">团次详情</text>
+            <text class="label-tip">点击查看团次详情</text>
+            <image class="tour-icon" src="../../images/youjiantou.png" mode="cover"></image>
+        </view>
+    </view>
+    <!-- <view class="view-con"  wx:if="{{proInfo.TourCount>0}}">
+        <text class="product-details-title">备注</text>
+        <view class="product-details-note">我是备注内容我是备注内容我是备注内容我是备注内容我是备注内容我是备注内容</view>
+    </view> -->
+    <view class="product-btn-con" wx:if="{{proInfo.TourCount<=0}}">
+        <button class="product-btn" bindtap="toOpenClass">去开班</button>
+    </view>
+    <view class="product-btn-con" wx:if="{{proInfo.TourCount>0}}">
+        <button class="product-btn" bindtap="toProductOrder">预定产品</button>
+    </view>
+</view>

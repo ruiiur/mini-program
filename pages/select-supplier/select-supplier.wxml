@@ -1,0 +1,28 @@
+<!--选择供应商-->
+<view class="select-supplier" style="padding-top:{{headTop+45}}px;">
+     <view class="select-supplier-nav" style="padding-top:{{headTop}}px;">
+        <van-nav-bar
+        title-class="nav-title"
+        title="选择供应商"
+        left-text="返回"
+        left-arrow
+        bind:click-left="onClickLeft"
+         />
+    </view>
+    <view class="">
+       <van-search 
+        value="{{ keyValue }}" 
+        placeholder="搜索供应商"  
+        bind:search="onSearch" />
+    </view>
+    <view class="supplier-list-con">
+        <view class="supplier-list"  wx:for="{{supplierList}}" data-supplierid="{{supplier.ID}}" data-suppliername="{{supplier.TravelAgencyName}}"  wx:for-item="supplier" wx:for-index="index" wx:key="index" bindtap="chooseSupplier">
+            <text class="supplier-title">{{supplier.TravelAgencyName}}</text>
+        </view>
+        <view wx:if="{{noData!=''}}" class="no-data">{{noData}}</view>
+        <view class="without-con" wx:if="{{supplierList.length==0 && isList==false}}">
+            <image class="without-img" src="../../images/none.png" mode="cover"></image>
+            <text class="without-tip">暂无符合搜索条件的供应商</text>
+        </view>
+    </view>
+</view>

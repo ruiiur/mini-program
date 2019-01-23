@@ -1,0 +1,168 @@
+.change-order{
+    background: #f4f7fa;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+.change-order-nav{
+    position: fixed;
+    top:0;
+    z-index: 10000;
+    width: 100%;
+    box-sizing: border-box;
+    background-image: linear-gradient(90deg, 
+		#1a55cb 0%, 
+		#6e77ff 100%), 
+	linear-gradient(
+		#2bd3fd, 
+		#2bd3fd);
+}
+/* .change-list .change-con{
+   margin-bottom: 18rpx;
+   background: #fff;
+}
+.change-list .change-con .change-date{
+    color: #999;
+    font-size: 22rpx;
+    height: 63rpx;
+    line-height: 63rpx;
+    padding: 0 20rpx;
+}
+.change-list .change-con .change-date .change-state{
+    color: #ffba00;
+    font-size: 26rpx;
+    float: right;
+}
+.change-list .change-con .change-date .change-state.esp{
+    color: #333;
+    font-size: 26rpx;
+}
+.change-list .change-con .change-text{
+    color: #333;
+    font-size: 28rpx;
+    line-height: 40rpx;
+    border-top:1px solid #e1e1e1;
+    padding: 30rpx 20rpx;
+    display: block;
+} */
+.change-list .change-con{  
+    /* padding: 24rpx 22rpx 28rpx 22rpx; */
+    padding-bottom: 30rpx;
+    background: #fff;
+    margin-bottom: 18rpx;
+}
+.change-list .change-con .change-date{
+    color: #999;
+    font-size: 22rpx;
+    margin-bottom: 10rpx;
+    height: 95rpx;
+    line-height: 95rpx;
+    padding: 0 22rpx;
+    /* border-top:1px solid #e1e1e1; */
+    border-bottom:1px solid #e1e1e1;
+}
+.change-btn-con{
+   float: right;
+   margin-top: 17rpx;
+}
+.change-btn-left,.change-btn-right{
+    width: 148rpx;
+    height: 62rpx;
+    font-size: 26rpx;
+    display: inline-block;
+}
+.change-btn-left{
+    line-height: 60rpx;
+    border:1px solid #a2a2a2;
+    color:#7d7d7d;
+    background: #fff;
+    margin-right: 38rpx;
+}
+.change-btn-right{
+    line-height: 62rpx;
+    color:#fff;
+    background-image: linear-gradient(90deg, #1a55cb 0%, #6e77ff 100%), linear-gradient(#ffffff, #ffffff);
+}
+.change-list .change-con .change-date .change-state{
+    color: #ffba00;
+    font-size: 26rpx;
+    margin-right: 22rpx;
+}
+.change-list .change-con .change-date .change-state.esp{
+    color: #7d7d7d;
+    font-size: 26rpx;
+}
+.change-list .change-con .change-main,.change-list .change-con .change-price{
+    padding: 0 20rpx;
+}
+.change-title{
+   padding: 20rpx 0; 
+   font-size: 30rpx;
+   color:#333;
+   display: block;
+}
+.change-text{
+    font-size: 28rpx;
+    color:#333;
+    display: block;
+}
+.change-view .change-label{
+    font-size: 28rpx;
+    color:#333;
+    display: inline-block;
+    width: 140rpx;
+    margin-right: 38rpx;
+}
+.change-view .change-tip{
+    font-size: 28rpx;
+    color:#333;
+}
+.change-view .change-tip-esp{
+    font-size: 28rpx;
+    color:#333;
+    display: inline-block;
+    vertical-align: top;
+    width: 530rpx;
+    margin-top: 15rpx;
+}
+/* .change-btn-con{
+    height: 90rpx;
+    line-height: 90rpx;
+    padding-right: 22rpx;
+    border-top:1px solid #e1e1e1;
+}
+.change-btn-con .change-btn{
+    height: 62rpx;
+    width: 148rpx;
+    background-image: linear-gradient(69deg, #5b8cfe 0%, #73aafc 100%), linear-gradient(#ffffff, #ffffff);
+    border-radius: 8rpx;
+    line-height: 62rpx;
+    padding: 0;
+    text-align: center;
+    color:#fff;
+    font-size: 26rpx;
+    margin-left: 38rpx;
+    float: right;
+    margin-top: 14rpx;
+}
+.change-btn-con .change-btn.esp{
+    line-height: 60rpx;
+    border:1px solid #a2a2a2;
+    color:#7d7d7d;
+    background: #fff;
+} */
+button::after{
+    border: none;
+}
+.without-con{
+    text-align: center;
+}
+.without-con .without-img{
+    width: 200rpx;
+    height: 205rpx;
+    display: block;
+    margin: 100rpx auto 30rpx auto;
+}
+.without-con .without-tip{
+    font-size: 28rpx;
+    color:#999;
+}

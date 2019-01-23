@@ -1,0 +1,35 @@
+<!--邀请供应商-->
+<view class="invite-supplier" style="padding-top:{{headTop+45}}px;">
+    <view class="invite-supplier-nav" style="padding-top:{{headTop}}px;">
+        <van-nav-bar
+        title-class="nav-title"
+        title="邀请供应商"
+        left-text="返回"
+        left-arrow
+        bind:click-left="onClickLeft"
+        />
+    </view>
+    <view class="view-con-esp">
+        <view class="invite-view">
+            <text class="invite-label">手机号</text>
+            <input class="invite-input" type="number" bindinput="keepTel" value="{{tel}}" placeholder="请输入邀约者手机号"/>
+        </view>
+        <!-- <view class="invite-view">
+            <text class="invite-label">短信模板</text>
+            <picker class="select-temp" bindchange="bindPickerChange" data-index="{{index}}" value="{{index}}" range="{{array}}">
+                <view class="picker">{{array[index]}}</view>
+                <image class="invite-right" src="../../images/youjiantou.png" mode=""></image>
+            </picker>
+        </view> -->
+    </view>
+    <view class="view-con">
+        <text class="invite-supplier-title">短信内容</text>
+        <view class="invite-supplier-note-con">
+            <textarea class="note" placeholder="请输入短信内容" bindinput="keepMessage" value="{{messageNote}}" />
+            <!-- <text class="tip">0/200</text> -->
+        </view>
+    </view>
+    <view class="invite-supplier-btn-con">
+        <button class="invite-supplier-btn" bindtap="sendInvite">发送</button>
+    </view>
+</view>

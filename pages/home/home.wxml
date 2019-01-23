@@ -1,0 +1,59 @@
+<!--首页-->
+<view class="home">
+  <view class="home-top">
+    <image class="home-bg" src="../../images/banner.png" mode="cover"></image>
+    <view class="home-tab" bindtap="toUpdateProduct">
+        <image src="../../images/shangchanpin.png" mode="cover"></image>
+        <text class="userinfo-nickname">上产品</text>
+    </view>
+    <navigator class="home-tab" url="../receive/receive" hover-class="none" openType="switchTab">
+        <image  src="../../images/quqianshou.png" mode="cover"></image>
+        <text class="userinfo-nickname">去签收</text>
+    </navigator>
+    <navigator class="home-tab" url="../order/order" hover-class="none" openType="switchTab">
+        <image src="../../images/dingdan.png" mode="cover"></image>
+        <text class="userinfo-nickname">订单</text>
+    </navigator>
+     <!-- <navigator class="home-tab" url="../message/message" hover-class="none" openType="switchTab">
+        <image src="../../images/xiaoxi.png" mode="cover"></image>
+        <text class="userinfo-nickname">消息</text>
+        <text class="message-tip">1</text>
+    </navigator> -->
+  </view>
+    <view class="margin-line"></view>
+    <view class="home-product">
+        <view>
+            <text class="product-line">产品列表</text>
+            <image class="switch" src="../../images/tuwen.png" mode="cover" bindtap="switch"></image>
+        </view>
+        <view class="home-list">
+            <view class="pro-con"  wx:for="{{productList}}" data-proid="{{product.productID}}" wx:for-item="product" wx:for-index="index" wx:key="index" bindtap="toDetails">
+                <image class="pro-img" src="{{product.PicImage}}" wx:if="{{isShow}}" mode="cover"></image>
+                <view  class="pro-info {{isShow===false?'pro-info-text':''}}">
+                    <text class="name">{{product.productName}}</text>
+                    <text class="tip">附件:</text>
+                    <text class="file">{{product.fileName}}</text>  
+                    <view>
+                        <button catchtap="toProductOrder" wx:if="{{product.TourCount>0}}" data-proid="{{product.productID}}">下单</button><button catchtap="toOpenClass" data-proid="{{product.productID}}" data-proname="{{product.productName}}" wx:if="{{product.TourCount<=0}}">开班</button><button data-proid="{{product.productID}}" catchtap="toModifyProduct">修改</button><button catchtap="toMassManagement" data-proid="{{product.productID}}" wx:if="{{product.TourCount>0}}">团次管理</button>   
+                    </view>      
+                </view>
+            </view>
+            <!-- <view class="pro-con">
+                <image class="pro-img" src="../../images/dajiaotongtupian.png" mode="cover"></image>
+                <view class="pro-info">
+                    <text class="name">我是产品名称我是产品名称我是产品名称我是产品...</text>
+                    <text class="tip">附件:</text>
+                    <text class="file">某产品附件名称.xls</text>
+                    <view>
+                        <button>下单</button><button>修改</button><button>团次管理</button>   
+                    </view>        
+                </view>
+            </view> -->
+        </view>
+        <view class="without-con" wx:if="{{productList.length==0 && isList==false}}">
+            <image class="without-img" src="../../images/none.png" mode="cover"></image>
+            <text class="without-tip">暂无产品,可以先去上产品哦~</text>
+        </view>
+        <view wx:if="{{noData!=''}}" class="no-data">{{noData}}</view>
+    </view>
+</view>

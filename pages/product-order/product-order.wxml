@@ -1,0 +1,187 @@
+<!--产品下单-->
+<view class="product-order" style="padding-top:{{headTop+46}}px;">
+     <view class="product-order-nav" style="padding-top:{{headTop}}px;">
+        <van-nav-bar
+        title-class="nav-title"
+        title="产品下单"
+        left-text="返回"
+        left-arrow
+        bind:click-left="onClickLeft"
+         />
+    </view>
+    <view class="view-con view-con-esp">
+        <text class="product-name">我是产品名称我是产品名称我是产品名称我是产品我是产品名称我是产品名称我是产品名...</text>
+    </view>
+    <view class="view-con">
+        <text class="product-order-title">报名信息</text>
+        <view class="product-order-view" bindtap="toMassManagement">
+            <text class="product-order-label">出团日期</text>
+            <text class="tour-date" wx:if="{{tourDate==''}}">请选择出团日期</text>
+            <text class="tour-date tour-date-esp" wx:if="{{tourDate!=''}}">{{tourDate}}</text>
+            <image class="product-order-right" src="../../images/youjiantou.png" mode=""></image>
+        </view>
+        <view class="product-order-view">
+            <text class="product-order-label">成人数量</text>
+            <input class="product-order-input" type="number" bindblur="checkAdult" value="{{adultNum}}" />
+        </view>
+        <view class="product-order-view">
+            <text class="product-order-label">儿童数量</text>
+            <input class="product-order-input" type="number" bindblur="checkChild" value="{{childNum}}" />
+        </view>
+    </view>
+    <view class="view-con">
+        <text class="product-order-title">价格信息</text>
+        <view class="product-order-view">
+            <text class="product-order-label">成</text>
+            <text class="product-order-label product-order-label-price">人</text>
+            <text class="product-order-label">价</text>
+            <text class="price-info">{{adultSalePrice}}元*{{adultNum}}={{(adultSalePrice*100)*adultNum/100}}元</text>
+            <!-- <input class="product-order-input" type="text" disabled='disabled' value="{{salePrice}}" placeholder="请选择结算单价"/> -->
+        </view>
+         <view class="product-order-view">
+            <text class="product-order-label">儿</text>
+            <text class="product-order-label product-order-label-price">童</text>
+            <text class="product-order-label">价</text>
+            <text class="price-info">{{childSalePrice}}元*{{childNum}}={{(childSalePrice*100)*childNum/100}}元</text>
+            <!-- <input class="product-order-input" type="text" disabled='disabled' value="{{salePrice}}" placeholder="请选择结算单价"/> -->
+        </view>
+    </view>
+    <view class="view-con">
+        <text class="product-order-title">游客信息</text>
+        <button class="paste" wx:if="{{!copyShow}}" bindtap="pasteFun">无格式粘贴</button>
+        <view class="copy-view" wx:if="{{copyShow}}">
+            <view class="copy-title">
+                <text class="tip-title">无格式粘贴游客信息</text>
+                <button class="copy-btn" bindtap="confirmCopy">确定</button>
+                <button class="copy-btn copy-btn-esp" bindtap="cancelCopy">取消</button>
+            </view>
+            <view class="copy-con">
+                <textarea class="noteCopy" value="{{copyNote}}" bindinput="keepCopyNote" placeholder=""/>
+                <view class="copy-tip" wx:if="{{tipShow}}">
+                    <text class="tip-place">输入格式：客户姓名 证件号</text>
+                    <text class="tip-place">例如：张三 325081198906263413</text>
+                </view>
+            </view>
+        </view>
+        <view>
+            <van-tabs active="{{ active }}" bindchange="tourTypeChange">
+                <van-tab title="手动录入">
+                    <view wx:for="{{orderTourist}}" wx:for-index="index" wx:for-item="tour" wx:key="index">
+                        <view class="tour-info">
+                            <image class="tour-icon" src="../../images/youke.png" mode=""></image>
+                            <text class="tour-index">游客{{index+1}}</text>
+                            <view class="cancel-con" wx:if="{{index!=0}}" data-index="{{index}}" bindtap="reduceTour">
+                                 <image class="cancel-img" src="../../images/shanchu.png" mode=""></image>
+                                 <text class="cancel-tip">删除</text>
+                            </view>
+                            <view>
+                                <text class="name-label">游客姓名</text>
+                                <input  class="product-order-input" type="text" data-index="{{index}}" value="{{tour.GuestName}}" bindinput="keepName" bindblur="nameListFun" placeholder="与证件保持一致"/>
+                            </view>
+                        </view>
+                        <view class="product-order-view">
+                            <picker class="select-card" bindchange="bindPickerChange" data-index="{{index}}" value="{{tour.GuestCardType}}" range="{{array}}">
+                                <view class="picker">{{array[tour.GuestCardType]}}</view>
+                                <image class="picker-icon" src="../../images/bottom.png" mode=""></image>
+                            </picker>
+                            <input  class="product-order-input" type="idcard" data-index="{{index}}" value="{{tour.GuestCard}}" bindinput="keepCard" bindblur="cardListFun" placeholder="请输入证件号"/>
+                        </view>
+                        <view class="product-order-view">
+                            <text class="product-order-label product-order-label-esp">性</text>
+                            <text class="product-order-label">别</text>
+                            <input  class="product-order-input" type="text" data-index="{{index}}" value="{{tour.GuestSex}}" bindinput="keepSex" placeholder="请输入性别"/>
+                        </view>
+                        <view class="product-order-view">
+                            <text class="product-order-label">联系电话</text>
+                            <input  class="product-order-input" type="number" data-index="{{index}}" value="{{tour.GuestTelphone}}" bindinput="keepTel" bindblur="telListFun" placeholder="请输入联系电话"/>
+                        </view>
+                    </view>
+                </van-tab>
+                <van-tab title="拍照录入">
+                    <view class="traffic-images-list" wx:if="{{tourImgList.length!=0}}">
+                        <image class="traffic-image"  wx:for="{{tourImgList}}" wx:key="index" wx:for-index="{{index}}" wx:for-item="tourI" src="{{tourI.FilePath}}"  mode=""></image>
+                    </view>
+                    <image class="update-traffic" src="../../images/upload.png" mode="" bindtap="updateTourImg"></image>
+                </van-tab>
+            </van-tabs>
+        </view>
+        <view class="add-tour" bindtap="addTour" wx:if="{{touristsType==1}}">
+            <image class="add-icon" src="../../images/tianjiayouke.png" mode=""></image>
+            <text class="add-text">添加游客</text>
+        </view>
+    </view>
+    <view class="view-con">
+        <text class="product-order-title">大交通</text>
+        <view class="">
+            <van-tabs active="{{ active }}">
+                <van-tab title="大交通备注">
+                    <textarea class="traffic-note" placeholder="请输入大交通备注" bindinput="keepTraffic" value="{{trafficNote}}"/>
+                </van-tab>
+                <van-tab title="拍照录入">
+                    <view class="traffic-images-list"  wx:if="{{OrderTraAttach.length!=0}}">
+                        <image class="traffic-image" wx:for="{{OrderTraAttach}}" wx:key="index" wx:for-index="{{index}}" wx:for-item="tra" src="{{tra.TraFileImg}}" mode=""></image>
+                    </view>
+                    <image class="update-traffic" src="../../images/up.png" mode="" bindtap="updateTraffic"></image>
+                </van-tab>
+            </van-tabs>
+        </view>
+    </view>
+    <view class="view-con">
+        <text class="product-order-title">调整金额</text>
+        <view class="change-remark-view">
+            <text class="change-remark-label">调整金额</text>
+            <image class="remark-add" wx:if="{{incomePlus===true}}" data-num="1" bindtap="incomeFun" src="../../images/jia1.png" mode=""></image>
+            <image class="remark-reduce"  wx:if="{{incomePlus===true}}" data-num="2" bindtap="incomeFun" src="../../images/jian2.png" mode=""></image>
+            <image class="remark-add" wx:if="{{incomePlus===false}}" data-num="3" bindtap="incomeFun" src="../../images/jia2.png" mode=""></image>
+            <image class="remark-reduce"  wx:if="{{incomePlus===false}}" data-num="4" bindtap="incomeFun" src="../../images/jian1.png" mode=""></image>
+            <input class="change-remark-input change-remark-input-esp" type="digit" value="{{priceAdjust}}" bindblur="priceAdjustFun" placeholder="请输入调整金额"/>
+        </view>
+    </view>
+    <view class="view-con">
+        <text class="product-order-title">备注</text>
+        <view class="product-order-note-con">
+            <textarea class="note" value="{{note}}" bindinput="keepNote" placeholder="请输入备注内容" />
+            <text class="tip">0/200</text>
+        </view>
+    </view>
+    <!-- <view class="view-con">
+        <text class="product-order-title">内部备注</text>
+        <view class="product-order-note-con">
+            <textarea class="note" value="{{note}}" bindinput="keepNote" placeholder="请输入备注内容" />
+            <text class="tip">0/200</text>
+        </view>
+    </view> -->
+    <view class="order-bottom">
+        <text class="sum-label">总价</text>
+        <text class="sum-price">￥{{setPrice}}</text>
+        <button class="sum-btn" bindtap="orderSubmit">立即下单</button>
+        <text class="amount-detail" bindtap="popupPrice">金额明细</text>
+    </view>
+    <van-action-sheet show="{{ show }}" bind:close="onClose" bind:cancel="onCancel" close-on-click-overlay>
+        <view class="amount-con">
+            <view class="amount-title">金额明细</view>
+            <view class="amount-view-con">
+                <view class="amount-view">
+                    <text class="amount-label">成人价</text>
+                    <text class="amount-price">{{adultSalePrice}}元*{{adultNum}}={{(adultSalePrice*100)*adultNum/100}}元</text>
+                </view>
+                <view class="amount-view">
+                    <text class="amount-label">儿童价</text>
+                    <text class="amount-price">{{childSalePrice}}元*{{childNum}}={{(childSalePrice*100)*childNum/100}}元</text>
+                </view>
+                <view class="amount-view">
+                    <text class="amount-label">调账</text>
+                    <text class="amount-price">{{priceAdjust}}元</text>
+                </view>
+                <view class="amount-view">
+                    <text class="amount-label">总价</text>
+                    <text class="amount-price">{{sumPrice}}元</text>
+                </view>
+                <view class="amount-view">
+                    <text class="amount-label amount-label-esp">结算价</text>
+                    <text class="amount-price amount-price-esp">{{setPrice}}元</text>
+                </view>
+            </view>
+        </view>
+    </van-action-sheet>
+</view>

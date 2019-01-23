@@ -1,0 +1,25 @@
+<!--选择文件-->
+<view class="select-file" style="padding-top:{{headTop+46}}px;">
+    <view class="select-file-nav" style="padding-top:{{headTop}}px;">
+        <van-nav-bar
+        title-class="nav-title"
+        title="选择文件"
+        left-text="返回"
+        left-arrow
+        bind:click-left="onClickLeft"
+        />
+    </view>
+    <view>
+        <view class="select-file-view" wx:for="{{fileList}}" wx:for-index="index" wx:for-item="file" data-src="{{file.ProFlieSrc}}" data-id="{{file.ID}}" data-name="{{file.ProFileName}}" wx:key="index" bindtap="chooseFlieSrc">
+            <text class="file-index">{{index+1}}、</text>
+            <text class="file-name">{{file.ProFileName}}</text>
+            <text class="file-time">{{file.CreatedDate}}</text>
+        </view>
+        <!-- <view class="select-file-view">
+            <text class="file-index">2、</text>
+            <text class="file-name">2018-08-13最新产品报价.doc</text>
+            <text class="file-time">2018-08-23</text>
+        </view>-->
+        <view wx:if="{{noData!=''}}" class="no-data">{{noData}}</view>
+    </view>
+</view>

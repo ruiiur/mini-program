@@ -1,0 +1,96 @@
+<!--产品开班-->
+<view class="open-class" style="padding-top:{{headTop+46}}px;">
+     <view class="open-class-nav" style="padding-top:{{headTop}}px;">
+        <van-nav-bar
+        title-class="nav-title"
+        title="产品开班"
+        left-text="返回"
+        left-arrow
+        bind:click-left="onClickLeft"
+         />
+    </view>
+    <view class="open-class-view">
+        <text class="open-class-title">开班信息</text>
+        <view class="view-con">
+            <text class="open-class-label">开团日期</text>
+            <picker mode="date" class="date-picker" value="{{startDate}}" start="2015-09-01" end="2037-09-01"  bindchange="bindStartDateChange">
+                <view class="picker {{startDate=='开始日期'?'dateesp':''}}">{{startDate}}</view>
+            </picker>
+            <text class="interval">至</text>
+            <picker mode="date" class="date-picker" value="{{endDate}}" start="2015-09-01" end="2037-09-01" bindchange="bindEndDateChange">
+                <view class="picker {{endDate=='结束日期'?'dateesp':''}}">{{endDate}}</view>
+            </picker>
+            <view class="dates" data-index='1' bindtap="chooseMonth">1月</view>
+            <view class="dates" data-index='2' bindtap="chooseMonth">2月</view>
+        </view>
+        <view class="view-con">
+            <text class="open-class-label">产品库存</text>
+            <input class="open-input" value="{{planNum}}" type="number" bindblur="keepPlanNum" placeholder="请输入产品库存"/>
+        </view>
+        <view class="view-con" bindtap="toClassRules">
+            <text class="open-class-label">开班规则</text>
+            <text class="accord" wx:if="{{ruleType===1}}">按天数</text>
+            <text class="accord" wx:if="{{ruleType==2}}">按周几</text>
+            <text class="accord" wx:if="{{ruleType==3}}">按日期</text>
+            <text class="accord" wx:if="{{ruleType===''}}">请选择</text>
+            <text class="open-rule" wx:if="{{ruleType===1}}">每隔{{ruleInfo}}天发团</text>
+            <text class="open-rule" wx:if="{{ruleType==2}}">每周{{ruleInfo}}发团</text>
+            <text class="open-rule" wx:if="{{ruleType==3}}">{{ruleInfo}}发团</text>
+            <image class="select-icon" src="../../images/youjiantou.png" mode="cover"></image>
+        </view>
+    </view>
+    <view class="open-class-view">
+        <text class="open-class-title">成人价格信息</text>
+        <view class="view-con">
+            <text class="open-class-label">直客价格</text>
+            <input class="open-input" value="{{priceStrategies[0].DirectPrice}}" data-index="0" data-price="DirectPrice" type="digit" bindblur="keepPriceInfo" placeholder="请输入直客价格"/>
+        </view>
+        <view class="view-con">
+            <text class="open-class-label">分销价格</text>
+            <input class="open-input" value="{{priceStrategies[0].SalesPrice}}" data-index="0" data-price="SalesPrice" type="digit" bindblur="keepPriceInfo" placeholder="请输入分销价格"/>
+        </view>
+        <view class="view-con">
+            <text class="open-class-label">返</text>
+            <text class="open-class-label-esp">佣</text>
+            <input class="open-input" value="{{priceStrategies[0].RebatePrice}}" data-index="0" data-price="RebatePrice" type="digit" bindblur="keepPriceInfo" placeholder="请输入返佣价"/>
+        </view>
+        <view class="view-con">
+            <text class="labelo">单</text>
+            <text class="labelo labelo-esp">房</text>
+            <text class="labelo">差</text>
+            <input class="open-input open-input-esp" value="{{priceStrategies[0].SingleRoomPrice}}" data-index="0" data-price="SingleRoomPrice" type="digit" bindblur="keepPriceInfo" placeholder="请输入单房差"/>
+        </view>
+    </view>
+    <view class="open-class-view">
+        <text class="open-class-title">儿童价格信息</text>
+        <view class="view-con">
+            <text class="open-class-label">直客价格</text>
+            <input class="open-input" value="{{priceStrategies[1].DirectPrice}}" data-index="1" data-price="DirectPrice" type="digit" bindblur="keepPriceInfo" placeholder="请输入直客价格"/>
+        </view>
+        <view class="view-con">
+            <text class="open-class-label">分销价格</text>
+            <input class="open-input" value="{{priceStrategies[1].SalesPrice}}" data-index="1" data-price="SalesPrice" type="digit" bindblur="keepPriceInfo" placeholder="请输入分销价格"/>
+        </view>
+        <view class="view-con">
+            <text class="open-class-label">返</text>
+            <text class="open-class-label-esp">佣</text>
+            <input class="open-input" value="{{priceStrategies[1].RebatePrice}}" data-index="1" data-price="RebatePrice" type="digit" bindblur="keepPriceInfo" placeholder="请输入返佣价"/>
+        </view>
+        <view class="view-con">
+            <text class="labelo">单</text>
+            <text class="labelo labelo-esp">房</text>
+            <text class="labelo">差</text>
+            <input class="open-input open-input-esp" value="{{priceStrategies[1].SingleRoomPrice}}" data-index="1" data-price="SingleRoomPrice" type="digit" bindblur="keepPriceInfo" placeholder="请输入单房差"/>
+        </view>
+    </view>
+    <!-- <view class="open-class-view">
+        <text class="open-class-title">备注</text>
+        <view class="open-note-con">
+            <textarea class="note" placeholder="请输入备注内容" value="{{note}}" />
+            <text class="tip">0/200</text>
+        </view>
+    </view> -->
+    <view class="product-btn-con">
+        <button class="product-btn" bindtap="openClassSubmit">开班</button>
+    </view>
+</view>

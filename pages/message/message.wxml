@@ -1,0 +1,38 @@
+<!--消息-->
+<view class="message" style="padding-top:{{headTop+45}}px;">
+    <view class="message-nav" style="padding-top:{{headTop}}px;">
+        <van-nav-bar
+        title-class="nav-title"
+        title="消息"
+        left-text="返回"
+        left-arrow
+        bind:click-left="onClickLeft"
+        />
+    </view>
+    <view>
+        <view class="message-view">
+            <image class="message-icon" src="../../images/yewudaiban.png" mode="cover"></image>
+            <text class="message-text">业务待办</text>
+            <image class="message-right" src="../../images/youjiantou.png" mode="cover"></image>
+            <text class="message-num">3</text>
+        </view>
+        <view class="message-view" bindtap="toNotice">
+            <image class="message-icon" src="../../images/gonggaotongzhi.png" mode="cover"></image>
+            <text class="message-text">公告通知</text>
+            <image class="message-right" src="../../images/youjiantou.png" mode="cover"></image>
+            <text class="message-num">3</text>
+        </view>
+        <view class="message-view">
+            <image class="message-icon" src="../../images/weiduxiaoxi.png" mode="cover"></image>
+            <text class="message-text">未读消息</text>
+            <image class="message-right" src="../../images/youjiantou.png" mode="cover"></image>
+            <text class="message-num">3</text>
+        </view>
+        <view class="message-view">
+            <image class="message-icon" src="../../images/tongxunlu.png" mode="cover"></image>
+            <text class="message-text">通讯录</text>
+            <image class="message-right" src="../../images/youjiantou.png" mode="cover"></image>
+            <text class="message-num">3</text>
+        </view>
+    </view>
+</view>

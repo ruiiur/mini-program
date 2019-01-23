@@ -1,0 +1,91 @@
+<!--团期管理-->
+<view class="mass-management" style="padding-top:{{headTop+46}}px;">
+     <view class="mass-management-nav" style="padding-top:{{headTop}}px;">
+        <van-nav-bar
+        title-class="nav-title"
+        title="团期管理"
+        left-text="返回"
+        left-arrow
+        bind:click-left="onClickLeft"
+        />
+    </view>
+    <view class="mass-management-con">
+        <view class='wrap'> 
+            <view class="date-wrap">
+                <view class="date-show {{monthIndex==index?'active':''}}" wx:for='{{monthArr}}' wx:key="index" wx:for-item="month" data-index="{{index}}" wx:for-index="index" bindtap="chooseMonth">
+                    <text class="month">{{month.month}}</text>
+                    <text class="price">{{month.price}}</text>
+                </view>
+            </view>
+            <view class='header'> 
+                <view wx:for='{{date}}' wx:key="index" class='{{(index == todayIndex) && isTodayWeek ? "weekMark" : ""}}'>{{item}}</view>
+            </view> 
+            <view class='date-box'> 
+                <!-- isToday == item.isToday ? "nowDay" : ( -->
+                <view wx:for='{{dateArr}}' bindtap="clickDate" data-index="{{index}}" wx:key="index" class='{{item.isToday==tourDate&& tourDate!="" &&item.price!=""?"activeDay":""}}' data-date='{{item.isToday}}'>     
+                    <view class='date-head'> 
+                        <view>{{item.dateNum}}</view> 
+                        <view class='date-weight'>{{item.price}}</view> 
+                    </view> 
+                </view> 
+            </view> 
+        </view>
+        <view class="mass-tip">
+            点击团期,查看对应团期的价格信息
+        </view>
+        <view class="mass-change-list">
+            <view class="list-con list-con-esp">
+                <text class="list-title">产品库存</text>
+                <text class="list-price">{{priceList[0].PlanNum}}</text>
+            </view>
+        </view>
+        <view class="mass-change-list">
+            <text class="mass-list-title">成人价格信息</text>
+            <view class="list-con">
+                <text class="list-title">直客价格</text>
+                <text class="list-price">{{priceList[0].DirectPrice}}</text>
+            </view>
+            <view class="list-con">
+                <text class="list-title">分销价格</text>
+                <text class="list-price">{{priceList[0].SalesPrice}}</text>
+            </view>
+            <view class="list-con">
+                <text class="title-e espf">返</text>
+                <text class="title-e espy">佣</text>
+                <text class="list-price espi">{{priceList[0].RebatePrice}}</text>
+            </view>
+            <view class="list-con">
+                <text class="list-title espd">单房差</text>
+                <text class="list-price">{{priceList[0].SingleRoomPrice}}</text>
+            </view>
+        </view>
+        <view class="mass-change-list">
+            <text class="mass-list-title">儿童价格信息</text>
+            <view class="list-con">
+                <text class="list-title">直客价格</text>
+                <text class="list-price">{{priceList[1].DirectPrice}}</text>
+            </view>
+            <view class="list-con">
+                <text class="list-title">分销价格</text>
+                <text class="list-price">{{priceList[1].SalesPrice}}</text>
+            </view>
+            <view class="list-con">
+                <text class="title-e espf">返</text>
+                <text class="title-e espy">佣</text>
+                <text class="list-price espi">{{priceList[1].RebatePrice}}</text>
+            </view>
+            <view class="list-con">
+                <text class="list-title espd">单房差</text>
+                <text class="list-price">{{priceList[1].SingleRoomPrice}}</text>
+            </view>
+        </view>
+        <!-- <view class="mass-change-list">
+            <text class="mass-list-title">备注</text>
+            <view class="mass-note">我是备注内容我是备注内容我是备注内容我是备注内容我是备注内容我是备注内容</view>
+        </view> -->
+        <view class="mass-managenment-con" wx:if="{{isDetail==0}}">
+            <button class="mass-managenment-btn" wx:if="{{tourDate!=''&&isHome==0}}" bindtap="toOrderPro" >选择团期</button>
+            <button class="mass-managenment-btn {{isHome!=0?'esp':''}}" wx:if="{{tourDate!=''}}" bindtap="toMassChange">修改团期</button>
+        </view>
+    </view>
+</view>

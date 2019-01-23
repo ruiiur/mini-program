@@ -1,0 +1,5 @@
+<!--登陆页-->
+<view class="login">
+    <image class="login-img" src="../../images/jump.gif" mode=""></image>
+    <text class="login-tip">加载中</text>
+</view>

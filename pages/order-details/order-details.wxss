@@ -1,0 +1,235 @@
+.order-details{
+    background: #f4f7fa;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding-bottom: 100rpx;
+}
+.order-details-nav{
+    position: fixed;
+    top:0;
+    z-index: 100;
+    width: 100%;
+    box-sizing: border-box;
+    background-image: linear-gradient(90deg, 
+		#1a55cb 0%, 
+		#6e77ff 100%), 
+	linear-gradient(
+		#2bd3fd, 
+		#2bd3fd);
+}
+.order-name{
+    font-size: 30rpx;
+    color:#333;
+    padding:25rpx 19rpx;
+    display: block;
+}
+.details-info{
+    background: #fff;
+}
+.poster-con{
+    text-align: center;
+}
+.order-details-img{
+    width: 447rpx;
+    height: 886rpx;
+    /* margin-left: 19rpx; */
+    margin-bottom: 30rpx;
+}
+.attachment{
+    height: 90rpx;
+    line-height: 90rpx;
+    border-top:1px solid #e1e1e1;
+    padding-left: 20rpx;
+}
+.attachment .attachment-label{
+    font-size: 28rpx;
+    color:#333;
+    margin-right: 54rpx;
+}
+.attachment .attachment-title{
+    font-size: 28rpx;
+    color:#839dfd;
+}
+.view-con{
+    background: #fff;
+    margin-top: 18rpx;
+}
+.order-details-title{
+    display: block;
+    font-size: 30rpx;
+    color:#333;
+    padding-left: 22rpx;
+    height: 98rpx;
+    line-height: 98rpx;
+}
+.order-details-title::before{
+    width: 6rpx;
+    height: 23rpx;
+    background:#3460db; 
+    display: inline-block;
+    content: '';
+    margin-right: 20rpx;
+    border-radius: 3rpx;
+}
+.order-details-view{
+    height: 90rpx;
+    line-height: 90rpx;
+    padding-left: 20rpx;
+    border-top:1px solid #e1e1e1;
+}
+.order-details-view .label-text{
+    font-size: 28rpx;
+    color:#333;
+}
+.label-text-esp{
+    margin: 0 13rpx;
+}
+.label-text-left{
+    margin-right: 53rpx;
+}
+.text-esp{
+    margin: 0 13rpx;
+}
+.order-details-view .label-con{
+    font-size: 28rpx;
+    color:#333;
+    margin-left: 58rpx;
+}
+.order-details-tour{
+    padding:20rpx 0 30rpx 20rpx;
+    border-top:1px solid #e1e1e1;
+}
+.order-details-tour .tour-icon{
+    width: 36rpx;
+    height: 27rpx;
+    margin-right: 23rpx;
+}
+.order-details-tour .tour-index{
+    font-size: 28rpx;
+    color:#111;
+}
+.order-details-tour .tour-info{
+   
+}
+.order-details-tour .tour-info .tour-name{
+    font-size: 28rpx;
+    color:#333;
+    margin-left: 58rpx;
+}
+.order-details-tour .tour-info .tour-label{
+    font-size: 28rpx;
+    color:#333;
+}
+.traffic-info{
+    border-top:1px solid #e1e1e1;
+    padding: 20rpx 20rpx 25rpx 20rpx;
+}
+.traffic-info .traffic-img{
+    width: 180rpx;
+    height: 180rpx;
+}
+.details-note{
+    border-top:1px solid #e1e1e1;
+    padding: 20rpx 20rpx 25rpx 20rpx;
+    height: 167rpx;
+}
+.note{
+    font-size: 28rpx;
+    color:#333;
+}
+/* .change-list .change-con{
+    border-top:1px solid #e1e1e1;
+    padding: 24rpx 22rpx 28rpx 22rpx;
+}
+.change-list .change-con .change-date{
+    color: #7d7d7d;
+    font-size: 22rpx;
+    margin-bottom: 10rpx;
+}
+.change-list .change-con .change-date .change-state{
+    color: #ffba00;
+    font-size: 26rpx;
+    float: right;
+}
+.change-list .change-con .change-date .change-state.esp{
+    color: #7d7d7d;
+    font-size: 26rpx;
+}
+.change-list .change-con .change-text{
+    color: #333;
+    font-size: 28rpx;
+    line-height: 28rpx;
+} */
+.change-list .change-con{  
+    /* padding: 24rpx 22rpx 28rpx 22rpx; */
+    /* padding-bottom: 30rpx; */
+}
+.change-list .change-con .change-date{
+    color: #999;
+    font-size: 22rpx;
+    margin-bottom: 10rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    padding: 0 22rpx;
+    border-top:1px solid #e1e1e1;
+    border-bottom:1px solid #e1e1e1;
+}
+.change-list .change-con .change-date .change-state{
+    color: #ffba00;
+    font-size: 26rpx;
+    float: right;
+}
+.change-list .change-con .change-date .change-state.esp{
+    color: #7d7d7d;
+    font-size: 26rpx;
+}
+.change-list .change-con .change-main,.change-list .change-con .change-price{
+    padding: 0 20rpx 30rpx;
+}
+.change-list .change-con .change-price{
+    border-top:1px solid #e1e1e1;
+}
+.change-title{
+   padding: 20rpx 0; 
+   font-size: 30rpx;
+   color:#333;
+   display: block;
+}
+.change-text{
+    font-size: 28rpx;
+    color:#333;
+    display: block;
+}
+.change-view .change-label{
+    font-size: 28rpx;
+    color:#333;
+    display: inline-block;
+    width: 140rpx;
+    margin-right: 38rpx;
+}
+.change-view .change-tip{
+    font-size: 28rpx;
+    color:#333;
+}
+.change-view .change-tip-esp{
+    font-size: 28rpx;
+    color:#333;
+    display: inline-block;
+    vertical-align: top;
+    width: 530rpx;
+    margin-top: 15rpx;
+}
+.order-btn-con{
+    margin-top: 150rpx;
+}
+.order-btn{
+    width: 656rpx;
+    height: 88rpx;
+    font-size:36rpx;
+    line-height: 88rpx;
+    color:#fff;
+    background-image: linear-gradient(90deg, #1a55cb 0%, #6e77ff 100%), linear-gradient(#2e9dd9, #2e9dd9);
+}
+button::after{
+    border: none;
+}

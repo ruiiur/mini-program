@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "van-nav-bar": "../../dist/nav-bar/index",
+        "van-field": "../../dist/field/index",
+        "van-tab": "../../dist/tab/index",
+        "van-tabs": "../../dist/tabs/index",
+        "van-action-sheet": "../../dist/action-sheet/index"
+    }
+}

@@ -1,0 +1,41 @@
+<!--订单发单-->
+<view class="send-order" style="padding-top:{{headTop+45}}px;">
+     <view class="send-order-nav" style="padding-top:{{headTop}}px;">
+        <van-nav-bar
+        title-class="nav-title"
+        title="订单发单"
+        left-text="返回"
+        left-arrow
+        bind:click-left="onClickLeft"
+        />
+    </view>
+    <view class="view-con view-con-esp">
+        <text class="send-order-title">成本金额</text>
+        <view class="send-view">
+            <text class="send-label">成本金额</text>
+            <input class="price-input" type="digit" value="{{price}}" bindblur="keepPrice" placeholder="请输入成本金额（为供应商最终结算价）"/>
+        </view>
+    </view>
+    <view class="view-con invite-con">
+        <text class="send-order-title">供应商</text>
+        <view class="send-view" bindtap="toSelectSupplier">
+            <text class="send-label">供</text>
+            <text class="send-label send-label-esp">应</text>
+            <text class="send-label">商</text>
+            <text class="send-supplier" wx:if="{{supplierObj==''}}">请选择供应商</text>
+            <text class="send-supplier-name" wx:if="{{supplierObj.supplierName!=''}}">{{supplierObj.supplierName}}</text>
+            <image class="send-right" src="../../images/youjiantou.png" mode=""></image>
+        </view>
+        <button class="invite-btn" bindtap="toInviteSupplier">邀请供应商</button>
+    </view>
+    <view class="view-con">
+        <text class="send-order-title">备注</text>
+        <view class="send-note-con">
+            <textarea class="note" placeholder="请输入备注内容"  bindinput="keepNote" value="{{note}}" />
+            <!-- <text class="tip">0/200</text> -->
+        </view>
+    </view>
+    <view class="send-order-btn-con">
+        <button class="send-order-btn" bindtap="sendOrder">发单</button>
+    </view>
+</view>

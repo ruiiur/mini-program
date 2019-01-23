@@ -1,0 +1,65 @@
+<!--订单详情-->
+<view class="update-product"  style="padding-top:{{headTop+46}}px;">
+     <view class="update-product-nav" style="padding-top:{{headTop}}px;">
+        <van-nav-bar
+        title-class="nav-title"
+        title="上产品"
+        left-text="返回"
+        left-arrow
+        bind:click-left="onClickLeft"
+         />
+    </view>
+    <view class="view-con view-con-esp">
+        <text class="update-product-title">产品名称</text>
+        <view class="update-product-name">
+            <textarea class="product-name" value="{{productName}}" bindinput="keepValue" placeholder="请输入产品名称" />
+            <!-- <text class="tip">0/200</text> -->
+        </view>
+    </view>
+    <view class="view-con">
+        <text class="update-product-title">目的地</text>
+        <view class="destination">
+            <button class="pro-type {{destinationType==index?'active':''}}" wx:key="index" wx:for="{{destinationList}}" wx:if="{{des.DestName!='国外'}}"  wx:for-index="index" wx:for-item="des" data-current="{{index}}" bindtap="clickTab">{{des.DestName}}</button>
+        </view>
+    </view>
+     <view class="view-con">
+        <text class="update-product-title update-product-title-mar">产品封面上传</text>
+        <view class="posters-list" wx:if="{{picImage!=''}}">
+            <view class="posters">
+                <image class="covers-img" src="{{picImage}}" mode="cover" bindtap="imgBig" data-src="{{picImage}}"></image>
+                <text class="posters-tip">点击预览</text>
+            </view>
+        </view>
+        <image wx:if="{{picImage==''}}" class="update-btn" src="../../images/shangchuanfengmian.png" mode="cover" bindtap="updateCover"></image>
+        <image wx:if="{{picImage!=''}}" class="update-btn" src="../../images/chongxinshangchuan.png" mode="cover" bindtap="updateCover"></image>
+    </view>
+    <view class="view-con">
+        <text class="update-product-title update-product-title-mar">海报上传</text>
+        <view class="posters-list" wx:if="{{picPosterImage!=''}}">
+            <view class="posters">
+                <image class="posters-img" src="{{picPosterImage}}" mode="cover" bindtap="imgBig" data-src="{{picPosterImage}}"></image>
+                <text class="posters-tip">点击预览</text>
+            </view>
+        </view>
+        <image wx:if="{{picPosterImage==''}}" class="update-btn" src="../../images/shangchuanhaibao.png" mode="cover" bindtap="popupWindow"></image>
+        <image wx:if="{{picPosterImage!=''}}" class="update-btn" src="../../images/chongxinshangchuan.png" mode="cover" bindtap="popupWindow"></image>
+    </view>
+    <view class="view-con">
+        <text class="update-product-title">上传产品附件</text>
+        <view class="update-file">
+            <text class="file-name">{{fileName}}</text>
+            <image class="file-icon" wx:if="{{fileName!=''}}" src="../../images/shanchu1.png" mode="cover" bindtap="cancelFile"></image>
+            <button class="file-btn" bindtap="toSelectFile">选择附件</button>
+        </view>
+    </view>
+    <van-action-sheet show="{{ show }}" cancel-text="取消" bind:close="onClose" bind:cancel="onCancel" close-on-click-overlay>
+        <view class="choose-con">
+            <view class="choose-bar" bindtap="updatePosterOne">从海报秀图库选择海报</view>
+            <view class="choose-bar" bindtap="updatePosterTwo">从海报秀产品选择海报</view>
+            <view class="choose-bar" bindtap="updatePoster">从手机相册选择海报</view>
+        </view>
+    </van-action-sheet>
+    <view class="product-btn-con">
+        <button class="product-btn" bindtap="updateProduct">上产品</button>
+    </view>
+</view>

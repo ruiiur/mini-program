@@ -1,0 +1,69 @@
+{
+  "pages":[
+    "pages/login/login",
+    "pages/select-supplier/select-supplier",
+    "pages/change-remark/change-remark",
+    "pages/order-details/order-details",
+    "pages/product-order/product-order",
+    "pages/modify-product/modify-product",
+    "pages/product-details/product-details",
+    "pages/change-order/change-order",
+    "pages/mass-change/mass-change",
+    "pages/receive-details/receive-details",
+    "pages/posters-pro/posters-pro",
+    "pages/update-product/update-product",
+    "pages/open-class/open-class",
+    "pages/send-order/send-order",
+    "pages/order/order",
+    "pages/invite-supplier/invite-supplier",
+    "pages/select-file/select-file",
+    "pages/select-posters/select-posters",
+    "pages/home/home",
+    "pages/logs/logs",
+    "pages/out/out",
+    "pages/index/index",
+    "pages/mine/mine",
+    "pages/class-rules/class-rules",
+    "pages/message/message",
+    "pages/notice/notice",
+    "pages/notice-details/notice-details",
+    "pages/mass-management/mass-management",
+    "pages/receive/receive"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#000",
+    "navigationStyle": "custom",
+    "navigationBarTitleText": "WeChat",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#646464",
+    "selectedColor": "#3c68e5",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "#f0f1f5",
+    "height":"98rpx",
+    "list": [{
+      "pagePath": "pages/home/home",
+      "text": "产品",
+      "iconPath": "images/tabbar/chanpin2.png",
+      "selectedIconPath": "images/tabbar/chanpin1.png"
+    }, {
+      "pagePath": "pages/receive/receive",
+      "text": "签收",
+      "iconPath": "images/tabbar/xianshou1.png",
+      "selectedIconPath": "images/tabbar/xianshou2.png"
+    },{
+      "pagePath": "pages/order/order",
+      "text": "订单",
+      "iconPath": "images/tabbar/dingdan1.png",
+      "selectedIconPath": "images/tabbar/dingdan2.png"
+    }, {
+      "pagePath": "pages/mine/mine",
+      "text": "我的",
+      "iconPath": "images/tabbar/My2.png",
+      "selectedIconPath": "images/tabbar/My1.png"
+    }]
+  },
+  "debug": false
+}

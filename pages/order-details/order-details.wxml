@@ -1,0 +1,176 @@
+<!--订单详情-->
+<view class="order-details"  style="padding-top:{{headTop+46}}px;">
+    <view class="order-details-nav"  style="padding-top:{{headTop}}px;">
+        <van-nav-bar
+        title-class="nav-title"
+        title="订单详情"
+        left-text="返回"
+        left-arrow
+        bind:click-left="onClickLeft"
+        />
+    </view>
+    <view class="details-info">
+        <text class="order-name">{{orderInfo.ProName}}</text>
+        <view class="poster-con">
+            <image class="order-details-img" src="{{orderInfo.PicPosterImage}}" mode="cover"></image>
+        </view>
+        <view class="attachment">
+            <text class="attachment-label">产品附件</text>
+            <text class="attachment-title">{{orderInfo.fileName}}</text>
+        </view>
+    </view>
+    <view class="view-con">
+        <text class="order-details-title">报名信息</text>
+        <view class="order-details-view">
+            <text class="label-text">出团日期</text>
+            <text class="label-con">{{orderInfo.TourDate}}</text>
+        </view>
+        <view class="order-details-view">
+            <text class="label-text">成人数量</text>
+            <text class="label-con">{{orderInfo.AdultNum}}</text>
+        </view>
+        <view class="order-details-view">
+            <text class="label-text">儿童人数</text>
+            <text class="label-con">{{orderInfo.ChildNum}}</text>
+        </view>
+    </view>
+    <view class="view-con" wx:if="{{orderInfo.OrderTourist!=null}}">
+        <text class="order-details-title">游客信息</text>
+        <view wx:for="{{orderInfo.OrderTourist}}" wx:for-item="tour" wx:for-index="index" wx:key="index">
+            <view class="order-details-tour">
+                <image class="tour-icon" src="../../images/youke.png" mode="cover"></image>
+                <text class="tour-index">游客{{index+1}}</text>
+                <view class="tour-info">
+                    <text class="tour-label">游客姓名</text>
+                    <text class="tour-name">{{tour.GuestName}}</text>
+                </view>
+            </view>
+            <view class="order-details-view">
+                <text class="label-text">身</text>
+                <text class="label-text text-esp">份</text>
+                <text class="label-text">证</text>
+                <text class="label-con">{{tour.GuestCard}}</text>
+            </view>
+            <view class="order-details-view">
+                <text class="label-text">联系电话</text>
+                <text class="label-con">{{tour.GuestTelphone}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="view-con" wx:if="{{orderInfo.OrderTraAttachList.length!=0}}">
+        <text class="order-details-title">大交通</text>
+        <view class="traffic-info">
+            <image class="traffic-img" wx:for="{{orderInfo.OrderTraAttachList}}" wx:for-index="index" wx:key="index" src="{{orderInfo.OrderTraAttachList[index]}}" mode="cover"></image>
+        </view>
+    </view>
+    <view class="view-con" wx:if="{{orderInfo.OrderTraAttachRemark!=null && orderInfo.OrderTraAttachRemark!=''}}">
+        <text class="order-details-title">大交通备注</text>
+        <view class="details-note">
+            <text class="note">{{orderInfo.OrderTraAttachRemark}}</text>
+        </view>
+    </view>
+    <view class="view-con">
+        <text class="order-details-title">价格明细</text>
+        <view class="order-details-view">
+            <text class="label-text">成</text>
+            <text class="label-text label-text-esp">人</text>
+            <text class="label-text">价</text>
+            <text class="label-con">{{audltPrice}}元*{{orderInfo.AdultNum}}={{audltPrice*orderInfo.AdultNum}}元</text>
+        </view>
+        <view class="order-details-view">
+            <text class="label-text">儿</text>
+            <text class="label-text label-text-esp">童</text>
+            <text class="label-text">价</text>
+            <text class="label-con">{{childPrice}}元*{{orderInfo.ChildNum}}={{childPrice*orderInfo.ChildNum}}元</text>
+        </view>
+        <view class="order-details-view">
+            <text class="label-text label-text-left">调</text>
+            <text class="label-text">账</text>
+            <text class="label-con">{{orderInfo.AdjustAmt}}元</text>
+        </view>
+        <view class="order-details-view">
+            <text class="label-text label-text-left">总</text>
+            <text class="label-text">价</text>
+            <text class="label-con">{{orderInfo.ReceivableAmt - orderInfo.AdjustAmt}}元</text>
+        </view>
+        <view class="order-details-view">
+            <text class="label-text">结</text>
+            <text class="label-text label-text-esp">算</text>
+            <text class="label-text">价</text>
+            <text class="label-con">{{orderInfo.ReceivableAmt}}元</text>
+        </view>
+    </view>
+    <view class="view-con">
+        <text class="order-details-title">备注</text>
+        <view class="details-note">
+            <text class="note">{{orderInfo.Comment}}</text>
+        </view>
+    </view>
+    <view class="view-con" wx:if="{{changeList.length!=0}}">
+        <text class="order-details-title">变更单信息</text>
+        <view class="change-list">
+           <!-- <view class="change-con" wx:for="{{changeList}}" wx:for-index="index" wx:for-item="change" wx:key="index">
+               <view class="change-date">
+                    {{change.CreatedDate}}
+                   <text class="change-state esp" wx:if="{{change.DataStatus==1}}">已确认</text>
+                   <text class="change-state" wx:if="{{change.DataStatus==0}}">待确认</text>
+                   <text class="change-state esp" wx:if="{{change.DataStatus==-1}}">取消</text>
+               </view>
+               <text class="change-text">{{change.ChangeComment}}</text>
+           </view> -->
+            <view class="change-con" wx:for="{{changeList}}" wx:for-index="index" wx:for-item="change" wx:key="index">
+                <view class="change-date">
+                     {{change.RevisedDate}}
+                    <text class="change-state" wx:if="{{change.Status==1}}">已确认</text>
+                    <text class="change-state" wx:if="{{change.Status==0}}">待审核</text>
+                    <text class="change-state" wx:if="{{change.Status==-1}}">取消</text>
+                </view>
+                <view class="change-main">
+                    <text class="change-title">内容修改</text>
+                    <text class="change-text">{{change.ChangeComment}}</text>
+                </view>
+                <view class="change-price">
+                    <text class="change-title">收入金额调整</text>
+                    <view class="change-view">
+                        <text class="change-label">成本金额</text>
+                        <text class="change-tip">{{change.BeforeIncomeAmount}}元</text>
+                    </view>
+                    <view class="change-view">
+                        <text class="change-label">调整金额</text>
+                        <text class="change-tip">{{change.IncomeAdjustAmt}}元</text>
+                    </view>
+                    <view class="change-view">
+                        <text class="change-label">调整后金额</text>
+                        <text class="change-tip">{{change.AfterIncomeAmount}}元</text>
+                    </view>
+                    <view class="change-view">
+                        <text class="change-label">修改备注</text>
+                        <text class="change-tip change-tip-esp">{{change.IncomeComment}}</text>
+                    </view>
+                </view>
+                <view class="change-price">
+                    <text class="change-title">成本金额调整</text>
+                    <view class="change-view">
+                        <text class="change-label">成本金额</text>
+                        <text class="change-tip">{{change.BeforeCostAmount}}元</text>
+                    </view>
+                    <view class="change-view">
+                        <text class="change-label">调整金额</text>
+                        <text class="change-tip">{{change.CostAdjustAmt}}元</text>
+                    </view>
+                    <view class="change-view">
+                        <text class="change-label">调整后金额</text>
+                        <text class="change-tip">{{change.AfterCostAmount}}元</text>
+                    </view>
+                    <view class="change-view" wx:if="{{change.CostComment!=null&&change.CostComment!=''}}">
+                        <text class="change-label">修改备注</text>
+                        <text class="change-tip change-tip-esp">{{change.CostComment}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="order-btn-con">
+        <button class="order-btn" bindtap="toModifyProduct">修改</button>
+    </view>
+</view>

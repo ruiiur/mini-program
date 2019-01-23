@@ -1,0 +1,67 @@
+<!--开班规则-->
+<view class="class-rules" style="padding-top:{{headTop+45}}px;">
+     <view class="class-rules-nav" style="padding-top:{{headTop}}px;">
+        <van-nav-bar
+        title-class="nav-title"
+        title="开班规则"
+        left-text="返回"
+        left-arrow
+        bind:click-left="onClickLeft"
+        />
+    </view>
+    <view class="swiper-tab">
+        <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">按天数</view>
+        <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">按周几</view>
+        <view class="swiper-tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">按日期</view>
+    </view>
+    <view class="swiper-con">
+        <swiper current="{{currentTab}}" duration="300"  bindchange="swiperTab">
+            <swiper-item >
+                <view class="day-con">
+                    <text class="day-text">发团相隔天数:</text>
+                    <input class="day-input" type="number" value="{{valueDay}}" bindblur="keepDay"/>
+                </view>
+                <text class="day-tip">如每隔0天发团则表示天天发团</text>
+            </swiper-item>
+            <swiper-item>
+                <view class="week-con">
+                    <button wx:for="{{weekList}}" wx:for-index="index" data-index="{{index}}" wx:key="index" wx:for-item="week" class="week-btn {{week.selected==true?'active':''}}" bindtap="clickWeek">{{week.name}}</button>
+                </view>
+            </swiper-item>
+            <swiper-item>
+                <!-- <view> -->
+                    <!-- <calendar  calendar-style="calendar"  header-style="calendar-header"  board-style="calendar-board"
+                    days-color="{{dayStyle}}" weeks-type="cn" binddayClick="dayClick" /> -->
+                <!-- </view> -->
+                <view class='wrap'> 
+                    <view class="date-wrap">
+                        <view class='date-show'> 
+                            <view class='lt-arrow' bindtap='lastMonth'> 
+                                <image src='../../images/rilijiantou2.png' mode='aspectFit'></image> 
+                            </view> 
+                            {{year}}年{{month}}月 
+                            <view class='rt-arrow' bindtap='nextMonth'> 
+                                <image src='../../images/rilijiantou2.png' mode='aspectFit'></image> 
+                            </view> 
+                        </view> 
+                    </view>
+                    <view class='header'> 
+                        <view wx:for='{{date}}' wx:key="index" class='{{(index == todayIndex) && isTodayWeek ? "weekMark" : ""}}'>{{item}}</view>
+                    </view> 
+                    <view class='date-box'> 
+                        <!-- isToday == item.isToday ? "nowDay" : ( -->
+                        <view wx:for='{{dateArr}}' bindtap="clickDate" data-index="{{index}}" wx:key="index" class='{{item.selected==true?"activeDay":""}}' data-date='{{item.isToday}}'>     
+                            <view class='date-head'> 
+                                <view>{{item.dateNum}}</view> 
+                            </view> 
+                            <!-- <view class='date-weight'>{{item.weight}}</view>  -->
+                        </view> 
+                    </view> 
+                </view> 
+            </swiper-item>
+        </swiper>
+        <view class="class-rules-btn-con">
+            <button class="class-rules-btn" bindtap="ruleSubmit">确定</button>
+        </view>
+    </view>
+</view>

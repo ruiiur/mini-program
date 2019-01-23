@@ -1,0 +1,57 @@
+.select-poster{
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+.select-poster-nav{
+    position: fixed;
+    top:0;
+    z-index: 10000;
+    width: 100%;
+    box-sizing: border-box;
+    background-image: linear-gradient(90deg, 
+		#1a55cb 0%, 
+		#6e77ff 100%), 
+	linear-gradient(
+		#2bd3fd, 
+		#2bd3fd);
+}
+.poster-main{
+    padding-bottom: 140rpx;
+    box-sizing: border-box;
+}
+.poster-con{
+    display: inline-block;
+    position: relative;
+    width: 180rpx;
+    height: 280rpx;
+    border-radius: 6rpx;
+    margin-left: 6rpx;
+    margin-bottom: 6rpx;
+}
+.poster-con .poster-img{
+    width: 180rpx;
+    height: 280rpx;
+}
+.poster-con .choose-icon{
+    position: absolute;
+    width: 40rpx;
+    height: 40rpx;
+    top:8rpx;
+    right:10rpx;
+}
+.poster-btn-con{
+    position: fixed;
+    bottom: 30rpx;
+    width: 100%;
+}
+.poster-btn{
+    width: 656rpx;
+    height: 88rpx;
+    font-size:36rpx;
+    line-height: 88rpx;
+    color:#fff;
+    background-image: linear-gradient(90deg, #1a55cb 0%, #6e77ff 100%), linear-gradient(#2e9dd9, #2e9dd9);
+}
+button::after{
+    border: none;
+}

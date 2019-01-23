@@ -1,0 +1,47 @@
+<!--签收-->
+<view class="receive" style="padding-top:{{headTop+46}}px;">
+     <view class="receive-nav" style="padding-top:{{headTop}}px;">
+        <van-nav-bar
+            title-class="nav-title"
+            title="签收列表"
+         />
+    </view>
+    <view class="type-con">
+        <view class="type-slider">
+            <text wx:for="{{receiveType}}" wx:for-index="index" wx:for-item="type" wx:key="index" data-index="{{index}}" class="type-text {{receiveIndex==index?'active':''}}" bindtap="selectType">{{type.name}}</text>
+        </view>
+        <view class="switch"  bindtap="switch">
+            <image class="switch-icon" src="../../images/tuwen.png" mode="cover"></image>
+        </view>
+    </view>
+    <view class="receive-product">
+        <view class="receive-list">
+            <view class="pro-con"  wx:for="{{orderSignList}}" wx:if="{{order.SignStatus!=0}}" data-orderid="{{order.OrderID}}" data-state="{{order.SignStatus}}" wx:for-item="order" wx:for-index="index" wx:key="index" bindtap="toOrderDetails">
+                <image class="pro-img" src="{{order.PicImage}}" wx:if="{{isShow}}" mode="cover"></image>
+                <view  class="pro-info  {{isShow===false?'pro-info-text':''}}">
+                    <text class="name">{{order.productName}}</text>
+                    <text class="date">出团日期:{{order.TourDate}}</text>
+                    <view>
+                        <!-- 订单签收状态  0：未发单  1：已发未收 2：已签收 3：已拒收 -->
+                        <button wx:if="{{order.SignStatus==1}}" data-status="1" data-orderid="{{order.OrderID}}" catchtap="signOrder">签收</button><button data-status="-1" data-orderid="{{order.OrderID}}" catchtap="signOrder" wx:if="{{order.SignStatus==1}}">拒收</button><button wx:if="{{order.SignStatus==2}}" data-orderid="{{order.OrderID}}" catchtap="toChangeOrder">变更审核</button><button  class="esp" wx:if="{{order.SignStatus==3}}">已拒收</button>  
+                    </view>      
+                </view>
+            </view>
+            <!-- <view class="pro-con">
+                <image class="pro-img" src="../../images/dajiaotongtupian.png" wx:if="{{isShow}}" mode="cover"></image>
+                <view  class="pro-info {{isShow===false?'pro-info-text':''}}">
+                    <text class="name">我是产品名称我是产品名称我是产品名称我是产品...</text>
+                    <text class="date">出团日期:2018-09-27</text>
+                    <view>
+                        <button>签收</button><button>变更审核</button>
+                    </view>      
+                </view>
+            </view> -->
+            <view wx:if="{{noData!=''}}" class="no-data">{{noData}}</view>
+            <view class="without-con" wx:if="{{orderSignList.length==0 && isList==false}}">
+                <image class="without-img" src="../../images/none.png" mode="cover"></image>
+                <text class="without-tip">暂无订单信息</text>
+            </view>
+        </view>
+    </view>
+</view>

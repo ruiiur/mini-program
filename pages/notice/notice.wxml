@@ -1,0 +1,44 @@
+<!--公告通知-->
+<view class="notice" style="padding-top:{{headTop+45}}px;">
+    <view class="notice-nav" style="padding-top:{{headTop}}px;">
+        <van-nav-bar
+        title-class="nav-title"
+        title="公告通知"
+        left-text="返回"
+        left-arrow
+        bind:click-left="onClickLeft"
+        />
+    </view>
+    <view>
+        <view class="notice-view">
+            <view class="notice-time">2018-11-27  12：20</view>
+            <view class="notice-con">
+                <view class="notice-text">
+                    <text class="notice-title">公告通知</text>
+                    <text class="notice-tip">我是公告通知内容我是公告通知内容我是公告通知内容</text>
+                </view>
+                <image class="notice-right" src="../../images/youjiantou.png" mode="cover"></image>
+            </view>
+        </view>
+        <view class="notice-view">
+            <view class="notice-time">2018-11-27  12：20</view>
+            <view class="notice-con">
+                <view class="notice-text">
+                    <text class="notice-title">公告通知</text>
+                    <text class="notice-tip">我是公告通知内容我是公告通知内容我是公告通知内容</text>
+                </view>
+                <image class="notice-right" src="../../images/youjiantou.png" mode="cover"></image>
+            </view>
+        </view>
+        <view class="notice-view">
+            <view class="notice-time">2018-11-27  12：20</view>
+            <view class="notice-con">
+                <view class="notice-text">
+                    <text class="notice-title">公告通知</text>
+                    <text class="notice-tip">我是公告通知内容我是公告通知内容我是公告通知内容</text>
+                </view>
+                <image class="notice-right" src="../../images/youjiantou.png" mode="cover"></image>
+            </view>
+        </view>
+    </view>
+</view>

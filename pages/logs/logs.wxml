@@ -1,0 +1,5 @@
+<!--登陆过渡页-->
+<view class="container log-list">
+    <image class="" src="../../images/jump.gif" mode=""></image>
+    <text>过渡中</text>
+</view>

@@ -1,0 +1,61 @@
+<!--团次修改-->
+<view class="mass-change" style="padding-top:{{headTop+46}}px;">
+     <view class="mass-change-nav" style="padding-top:{{headTop}}px;">
+        <van-nav-bar
+        title-class="nav-title"
+        title="团次修改"
+        left-text="返回"
+        left-arrow
+        bind:click-left="onClickLeft"
+         />
+    </view>
+    <view class="mass-change-list">
+        <view class="list-con list-con-esp">
+           <text class="list-title">产品库存</text>
+           <input class="list-input" placeholder="" bindblur="keepPriceInfo"  data-price="PlanNum" data-index="0" type="number" value="{{priceList[0].PlanNum}}"/>
+        </view>
+    </view>
+    <view class="mass-change-list">
+        <text class="mass-list-title">成人价格信息</text>
+        <view class="list-con">
+           <text class="list-title">直客价格</text>
+           <input class="list-input" placeholder="" bindblur="keepPriceInfo" data-index="0"  data-price="DirectPrice" type="digit" value="{{priceList[0].DirectPrice}}"/>
+        </view>
+        <view class="list-con">
+           <text class="list-title">分销价格</text>
+           <input class="list-input" placeholder="" bindblur="keepPriceInfo" data-index="0" data-price="SalesPrice" type="digit" value="{{priceList[0].SalesPrice}}"/>
+        </view>
+        <view class="list-con">
+           <text class="title-e espf">返</text>
+           <text class="title-e espy">佣</text>
+           <input class="list-input espi" placeholder="" bindblur="keepPriceInfo" data-index="0" data-price="RebatePrice" type="digit" value="{{priceList[0].RebatePrice}}"/>
+        </view>
+        <view class="list-con">
+           <text class="list-title espd">单房差</text>
+           <input class="list-input" placeholder="" bindblur="keepPriceInfo" data-index="0" data-price="SingleRoomPrice" type="digit" value="{{priceList[0].SingleRoomPrice}}"/>
+        </view>
+    </view>
+    <view class="mass-change-list">
+        <text class="mass-list-title">儿童价格信息</text>
+        <view class="list-con">
+           <text class="list-title">直客价格</text>
+           <input class="list-input" placeholder="" bindblur="keepPriceInfo" data-index="1" data-price="DirectPrice" type="digit" value="{{priceList[1].DirectPrice}}"/>
+        </view>
+        <view class="list-con">
+           <text class="list-title">分销价格</text>
+           <input class="list-input" placeholder="" bindblur="keepPriceInfo" data-index="1" data-price="SalesPrice" type="digit" value="{{priceList[1].SalesPrice}}"/>
+        </view>
+        <view class="list-con">
+           <text class="title-e espf">返</text>
+           <text class="title-e espy">佣</text>
+           <input class="list-input espi" placeholder="" bindblur="keepPriceInfo" data-index="1" data-price="RebatePrice" type="digit" value="{{priceList[1].RebatePrice}}"/>
+        </view>
+        <view class="list-con">
+           <text class="list-title espd">单房差</text>
+           <input class="list-input" placeholder="" bindblur="keepPriceInfo" data-index="1" data-price="SingleRoomPrice" type="digit" value="{{priceList[1].SingleRoomPrice}}"/>
+        </view>
+    </view>
+    <view class="mass-btn-con">
+        <button class="mass-btn" bindtap="massChangeSubmit">确定修改</button>
+    </view>
+</view>

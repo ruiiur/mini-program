@@ -1,0 +1,28 @@
+<!--我的-->
+<view class="mine">
+   <view class="mine-top">
+        <image class="mine-bg" src="../../images/beijing1.png"></image>
+        <block>
+            <view class="userinfo">
+                <image class="userinfo-avatar" src="../../images/logo1.png" mode="cover"></image>
+            </view>
+            <text class="userinfo-nickname">上海竞界科技</text>
+        </block>
+   </view>
+   <view>
+        <view class="mine-list">
+            <image class="mine-icon" src="../../images/yijianfankui.png" mode="cover"></image>
+            <text class="mine-title">意见反馈</text>
+            <image class="mine-right" src="../../images/youjiantou.png" mode="cover"></image>
+        </view>
+        <!-- <view class="mine-list">
+            <image class="mine-icon" src="../../images/qiehuanzhanghao.png" mode="cover"></image>
+            <text class="mine-title">切换账号</text>
+            <image class="mine-right" src="../../images/youjiantou.png" mode="cover"></image>
+        </view> 
+        <view class="mine-list">
+            <image class="mine-icon" src="../../images/tuichuzhanghao.png" mode="cover"></image>
+            <text class="mine-title">退出账号</text>
+        </view>  -->
+   </view>
+</view>

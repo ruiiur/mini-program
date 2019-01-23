@@ -1,0 +1,19 @@
+<!--通知详情-->
+<view class="notice-details" style="padding-top:{{headTop+45}}px;">
+    <view class="notice-details-nav" style="padding-top:{{headTop}}px;">
+        <van-nav-bar
+        title-class="nav-title"
+        title="通知详情"
+        left-text="返回"
+        left-arrow
+        bind:click-left="onClickLeft"
+        />
+    </view>
+    <view class="notice-details-title">
+        <text class="title">我是通知标题我是通知标题我是通知标题我是通知标题我是通知标题</text>
+    </view>
+    <view class="notice-details-date">2018-09-27    12：30</view>
+    <view class="notice-details-content">
+         2018年9月13-17日来自全国各区域的70余位星联盟家人齐聚魔都，参加了这一次老旅游品牌SaaS V3.0系统培训。老旅游品牌SaaS V3.0版本已于9月1日正式上线，新系统较v2.0版本有极大提升，搭载了更多更广泛的实用功能。本次培训旨在保证每个成员精通全流程操作，在最短时间内熟悉并使用系统新系统较v2.0版本有极大提升，搭载了更多更广泛的实用功能新系统较v2.0版本有极大提升，搭载了更多更广泛的实用功能新系统较v2.0版本有极大提升，搭载了更多更广泛的实用功能
+    </view>
+</view>

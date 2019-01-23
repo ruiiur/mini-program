@@ -1,0 +1,48 @@
+.message{
+    min-height: 100vh;
+    box-sizing: border-box;
+    background: #f4f7fa;
+}
+.message-nav{
+    position: fixed;
+    top:0;
+    z-index: 10000;
+    width: 100%;
+    box-sizing: border-box;
+    background-image: linear-gradient(90deg, 
+		#1a55cb 0%, 
+		#6e77ff 100%), 
+	linear-gradient(
+		#2bd3fd, 
+		#2bd3fd);
+}
+.message-view{
+    height: 120rpx;
+    padding: 0 20rpx;
+    line-height: 115rpx;
+    margin-bottom: 16rpx;
+    background: #fff;
+}
+.message-view .message-icon{
+   height: 80rpx; 
+   width: 80rpx;
+   display: inline-block;
+   vertical-align: middle;
+   margin-right: 45rpx;
+}
+.message-view .message-text{
+    font-size:30rpx;
+    color:#333;
+}
+.message-view .message-num{
+    font-size:32rpx;
+    color:#333;
+    float: right;
+}
+.message-view .message-right{
+    width: 14rpx;
+    height: 24rpx;
+    float: right;
+    margin-left: 40rpx;
+    margin-top: 48rpx;
+}

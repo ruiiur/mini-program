@@ -1,0 +1,70 @@
+<!--修改订单或变更订单-->
+<view class="change-remark" style="padding-top:{{headTop+45}}px;">
+    <view class="change-remark-nav" style="padding-top:{{headTop}}px;">
+        <van-nav-bar
+        title-class="nav-title"
+        title="{{state==1?'修改':(state==2?'变更':'')}}订单"
+        left-text="返回"
+        left-arrow
+        bind:click-left="onClickLeft"
+        />
+    </view>
+    <view class="view-con-esp">
+        <text class="change-remark-title">内容{{state==1?'修改':(state==2?'变更':'')}}</text>
+        <view class="change-remark-note-con">
+            <textarea class="note" placeholder="请输入所需{{state==1?'修改':(state==2?'变更':'')}}内容" bindinput="keepContent" value="{{content}}" />
+            <!-- <text class="tip">0/200</text> -->
+        </view>
+    </view>
+     <view class="view-con">
+        <text class="change-remark-title">收入金额调整</text>
+        <view class="change-remark-view">
+            <text class="change-remark-label">收入金额</text>
+            <input class="change-remark-input" type="digit" value="{{incomePrice}}" disabled="{{true}}" placeholder=""/>
+        </view>
+        <view class="change-remark-view">
+            <text class="change-remark-label">调整金额</text>
+            <image class="remark-add" wx:if="{{incomePlus===true}}" data-num="1" bindtap="incomeFun" src="../../images/jia1.png" mode=""></image>
+            <image class="remark-reduce"  wx:if="{{incomePlus===true}}" data-num="2" bindtap="incomeFun" src="../../images/jian2.png" mode=""></image>
+            <image class="remark-add" wx:if="{{incomePlus===false}}" data-num="3" bindtap="incomeFun" src="../../images/jia2.png" mode=""></image>
+            <image class="remark-reduce"  wx:if="{{incomePlus===false}}" data-num="4" bindtap="incomeFun" src="../../images/jian1.png" mode=""></image>
+            <input class="change-remark-input change-remark-input-esp" type="digit" value="{{incomeAdjust}}" bindblur="incomeAdjustFun" placeholder="请输入调整金额"/>
+        </view>
+        <view class="change-remark-view">
+            <text class="change-remark-label">调整后金额</text>
+            <input class="change-remark-input" type="digit" value="{{incomePriceSet}}"  disabled="{{true}}" placeholder=""/>
+        </view>
+        <view class="change-remark-view-esp">
+            <text class="change-remark-label">{{state==1?'修改':(state==2?'变更':'')}}备注</text>
+            <textarea class="remark-note" placeholder="请输入修改备注" bindinput="incomeNoteFun" value="{{incomeNote}}" />
+        </view>
+    </view>
+     <view class="view-con">
+        <text class="change-remark-title">成本金额调整</text>
+        <view class="change-remark-view">
+            <text class="change-remark-label">成本金额</text>
+            <input class="change-remark-input" type="digit" value="{{costPrice}}" disabled="{{true}}" placeholder=""/>
+        </view>
+        <view class="change-remark-view">
+            <text class="change-remark-label">调整金额</text>
+            <image class="remark-add" wx:if="{{costPlus===true}}" data-num="1" bindtap="costFun" src="../../images/jia1.png" mode=""></image> 
+            <image class="remark-reduce" wx:if="{{costPlus===true}}" data-num="2" bindtap="costFun" src="../../images/jian2.png" mode=""></image>
+            <image class="remark-add" wx:if="{{costPlus===false}}" data-num="3" bindtap="costFun" src="../../images/jia2.png" mode=""></image>
+            <image class="remark-reduce"  wx:if="{{costPlus===false}}" data-num="4" bindtap="costFun" src="../../images/jian1.png" mode=""></image>
+            <input class="change-remark-input change-remark-input-esp" type="digit" value="{{costAdjust}}" bindblur="costAdjustFun" placeholder="请输入调整金额"/>
+        </view>
+        <view class="change-remark-view">
+            <text class="change-remark-label">调整后金额</text>
+            <input class="change-remark-input" type="digit" value="{{costPriceSet}}"  disabled="{{true}}" placeholder=""/>
+        </view>
+        <view class="change-remark-view-esp">
+            <text class="change-remark-label">{{state==1?'修改':(state==2?'变更':'')}}备注</text>
+            <textarea class="remark-note" placeholder="请输入修改备注" bindinput="costNoteFun" value="{{costNote}}" />
+        </view>
+    </view>
+    <view class="remark-btn-con">
+        <!-- <button class="remark-btn" wx:if="{{state==1 || state==3}}" bindtap="changeSubmit">提交</button>
+        <button class="remark-btn" wx:if="{{state==2}}" bindtap="alterationSubmit">提交</button> -->
+        <button class="remark-btn" bindtap="alterationSubmit">提交</button>
+    </view>
+</view>
